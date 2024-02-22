@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="32dp"
+    app:cardElevation="16dp"
+    app:contentPadding="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardUseCompatPadding="false">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@color/colorGray"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/transaction_date"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
+                android:text="Transaction Date :"
+                android:drawableStart="@drawable/ic_calendar"
+                android:drawablePadding="8dp"
+                android:textAppearance="@style/TextField_Bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_transaction_date"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="jvhjv"
+                android:textColor="@color/black"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/transaction_date"
+
+                />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CACAF8"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transaction_date"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/colorGray"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/narration"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="Narration :"
+            android:drawableStart="@drawable/ic_keyboard"
+            android:drawablePadding="8dp"
+            android:textSize="14sp"
+            android:textAppearance="@style/TextField_Bold"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1"/>
+
+        <TextView
+            android:id="@+id/tv_narration"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="jskfhk"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/view1"
+            app:layout_constraintStart_toEndOf="@+id/narration"
+
+            />
+    </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CACAF8"
+            app:layout_constraintTop_toBottomOf="@+id/tv_narration"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/colorGray"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/credit_amount"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="Credit Amount :"
+            android:drawableStart="@drawable/baseline_currency_rupee_24"
+            android:drawablePadding="8dp"
+            android:textSize="14sp"
+            android:textAppearance="@style/TextField_Bold"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2"/>
+
+        <TextView
+            android:id="@+id/tv_credit_amount"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="jskfhk"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            app:layout_constraintStart_toEndOf="@+id/credit_amount"
+
+            />
+    </LinearLayout>
+
+
+
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CACAF8"
+            app:layout_constraintTop_toBottomOf="@+id/tv_credit_amount"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/colorGray"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/debit"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="Debit :"
+            android:drawableStart="@drawable/baseline_currency_rupee_24"
+            android:drawablePadding="8dp"
+            android:textSize="14sp"
+            android:textAppearance="@style/TextField_Bold"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3"/>
+
+        <TextView
+            android:id="@+id/tv_debit"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="jskfhk"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/view3"
+            app:layout_constraintStart_toEndOf="@+id/debit"
+
+            />
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

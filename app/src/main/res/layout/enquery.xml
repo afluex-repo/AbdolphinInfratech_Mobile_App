@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp">
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Name"
+        android:textAppearance="@style/TextFieldBold"
+        android:textColor="@color/fab_color_shadow"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/tv_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/box_bg"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:maxLines="2"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        android:padding="6dp"
+        android:textColor="@color/textcolor"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Details"
+        android:textAppearance="@style/TextFieldBold"
+        android:textColor="@color/fab_color_shadow"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Name"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/tv_Details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/box_bg"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:maxLines="2"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        android:padding="6dp"
+        android:textColor="@color/textcolor"
+        android:textSize="14sp" />
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/btn_submit"
+        android:textColor="@color/white"
+        android:text="Save"/>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Enquiry List"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/text2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
