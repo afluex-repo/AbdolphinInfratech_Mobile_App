@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,20 +6,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.abdolphininfratech.Activity.EditProfile;
 import com.abdolphininfratech.Model.ResponseViewProfile;
-import com.abdolphininfratech.Model.responseDashboard.ResponseDashboard;
 import com.abdolphininfratech.R;
 import com.abdolphininfratech.app.PreferencesManager;
 import com.abdolphininfratech.common.LoggerUtil;
 import com.abdolphininfratech.common.NetworkUtils;
 import com.abdolphininfratech.constants.BaseFragment;
 import com.google.gson.JsonObject;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -86,8 +81,8 @@ public class ViewProfile extends BaseFragment {
         } else showMessage(R.string.alert_internet);
 
         return view;
-    }
 
+    }
 
     @Override
     public void onDestroy() {

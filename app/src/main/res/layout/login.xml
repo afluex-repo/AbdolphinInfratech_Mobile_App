@@ -186,7 +186,6 @@
                 android:layout_width="40dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                app:civ_fill_color="@color/white"
                 android:padding="32dp"
                 android:cropToPadding="true"
                 android:src="@drawable/facebook"
@@ -195,7 +194,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                app:civ_fill_color="@color/white"
+
                 android:padding="32dp"
                 android:cropToPadding="true"
                 android:src="@drawable/google"
@@ -204,7 +203,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                app:civ_fill_color="@color/white"
+
                 android:padding="32dp"
                 android:cropToPadding="true"
                 android:src="@drawable/instagram"

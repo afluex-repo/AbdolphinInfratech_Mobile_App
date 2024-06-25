@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
 import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,11 +9,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.abdolphininfratech.Adapter.SliderAdapter;
 import com.abdolphininfratech.Model.responseDashboard.ResponseDashboard;
 import com.abdolphininfratech.Model.responseNews.Lstnewsdetail;
@@ -40,14 +37,11 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.google.gson.JsonObject;
 import com.smarteist.autoimageslider.SliderView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -55,20 +49,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class Dashboard extends BaseFragment {
-
     Unbinder unbinder;
-
     @BindView(R.id.Total_Associates)
     TextView TotalAssociates;
-
     @BindView(R.id.txt_heading)
     TextView txt_heading;
-
     @BindView(R.id.Total_Active_Id)
     TextView TotalActiveId;
-
-
     @BindView(R.id.Self_Business)
     TextView SelfBusiness;
     @BindView(R.id.Team_Business)
@@ -101,14 +90,28 @@ public class Dashboard extends BaseFragment {
     SliderView sliderView;
     private int[] yValues =new int[4];
     private String[] xValues = new String[4];
-
     ArrayList<Lstnewsdetail> lstnewsdetails;
+
     //,
 //
     // colors for different sections in pieChart
-    public static  final int[] MY_COLORS = {
-            Color.rgb(78,105,226),  Color.rgb(255,0,0), Color.rgb(219,60,55), Color.rgb(0,101,0)
+//    public static  final int[] MY_COLORS = {
+//            Color.rgb(78,105,226),  Color.rgb(255,0,0), Color.rgb(219,60,55), Color.rgb(0,101,0)
+//    };
+
+
+    public static final int[] MY_COLORS = {
+//            Color.rgb(78, 105, 226),
+//            Color.rgb(255, 0, 100),
+//            Color.rgb(219, 60, 55),
+//            Color.rgb(0, 101, 70)
+            Color.BLUE,        // Blue
+            Color.MAGENTA,     // Magenta
+            Color.RED,         // Red
+            Color.GREEN        // Green
     };
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -156,7 +159,6 @@ public class Dashboard extends BaseFragment {
 
     private void getData() {
         showLoading();
-
         Log.e("AssociateId", PreferencesManager.getInstance(context).getUserId());
         JsonObject object = new JsonObject();
         object.addProperty("AssociateID", PreferencesManager.getInstance(context).getUserId());
@@ -188,13 +190,13 @@ public class Dashboard extends BaseFragment {
 
                 }
             }
-
             @Override
             public void onFailure(Call<ResponseDashboard> call, Throwable t) {
                 hideLoading();
             }
         });
     }
+
     public void setDataForPieChart() {
         ArrayList<Entry> yVals1 = new ArrayList<Entry>();
 
@@ -218,21 +220,14 @@ public class Dashboard extends BaseFragment {
         for (int c : MY_COLORS)
             colors.add(c);
 
-
         dataSet.setColors(colors);
-
-        //  create pie data object and set xValues and yValues and set it to the pieChart
         PieData data = new PieData(xVals, dataSet);
-        //   data.setValueFormatter(new DefaultValueFormatter());
-        //   data.setValueFormatter(new PercentFormatter());
 
         data.setValueFormatter(new MyValueFormatter());
         data.setValueTextSize(11f);
         data.setValueTextColor(Color.WHITE);
 
         chart1.setData(data);
-
-        // undo all highlights
         chart1.highlightValues(null);
 
         // refresh/update pie chart
@@ -241,15 +236,13 @@ public class Dashboard extends BaseFragment {
         // animate piechart
         chart1.animateXY(1400, 1400);
 
-
-        // Legends to show on bottom of the graph
         Legend l = chart1.getLegend();
         l.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
         l.setXEntrySpace(7);
         l.setYEntrySpace(5);
+
+
     }
-
-
     public class MyValueFormatter implements ValueFormatter {
 
         private DecimalFormat mFormat;
@@ -269,21 +262,19 @@ public class Dashboard extends BaseFragment {
     private void loadList() {
         //getting the progressbar
         String url = "https://abdolphininfratech.com/WebAPI/GetGraphDetailsOfPlot?LoginId="+PreferencesManager.getInstance(context).getLoginId();
+        Log.d("url", ""+url);
+        System.out.println(""+url);
         final ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Please wait...");
         progressDialog.setCancelable(false);
         progressDialog.setIndeterminate(true);
-
         progressDialog.show();
         //making the progressbar visible
-
-
         //creating a string request to send request to the url
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 progressDialog.dismiss();
-
 
                 try {
                     //getting the whole json object from the response
@@ -335,8 +326,9 @@ public class Dashboard extends BaseFragment {
         //adding the string request to request queue
         requestQueue.add(stringRequest);
     }
+
     private void getNews() {
-      //  showLoading();
+        //  showLoading();
         JsonObject object = new JsonObject();
         object.addProperty("AssociateID", PreferencesManager.getInstance(context).getUserId());
         LoggerUtil.logItem(object);

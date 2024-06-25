@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Real Estate Demo</string>
+    <string name="app_name">AbdolphinInfratech</string>
     <string name="version">Version </string>
     <!--    PERMISSIONS text   -->
     <string name="alert_internet">There is no Internet Connectivity</string>
@@ -18,8 +18,8 @@
     <string name="log_in"><u>Log In</u></string>
 
     <string name="verification_text">Please type the verification code\nsend to +91</string>
-
     <!--ViewProfile-->
     <string name="first_name">Name</string>
     <string name="contact">Contact</string>
+
 </resources>

@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Activity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,7 +6,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.abdolphininfratech.Model.ResponseUpdateProfile;
 import com.abdolphininfratech.Model.ResponseViewProfile;
 import com.abdolphininfratech.Model.request.RequestUpdateProfile;
@@ -16,7 +14,6 @@ import com.abdolphininfratech.app.PreferencesManager;
 import com.abdolphininfratech.common.LoggerUtil;
 import com.abdolphininfratech.constants.BaseActivity;
 import com.google.gson.JsonObject;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

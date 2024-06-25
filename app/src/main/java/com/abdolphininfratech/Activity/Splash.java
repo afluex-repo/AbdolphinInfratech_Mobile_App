@@ -125,7 +125,7 @@ public class Splash extends BaseActivity {
             }
         });
 
-
+//        showDialogWithImage();
     }
 
     public void createExitDialog(Context context, String title,
@@ -265,5 +265,25 @@ public class Splash extends BaseActivity {
             }
             return false;
         }
+    }
+
+
+    private void showDialogWithImage() {
+        // Create a dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        // Inflate the custom layout/view
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_image, null);
+        builder.setView(dialogView);
+
+        // Find the ImageView in the custom layout
+        ImageView dialogImageView = dialogView.findViewById(R.id.dialog_image_view);
+
+        // Optionally, set an image to the ImageView dynamically
+        // Glide.with(this).load("url_or_drawable").into(dialogImageView);
+
+        // Create and show the dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

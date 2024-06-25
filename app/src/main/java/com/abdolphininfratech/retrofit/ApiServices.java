@@ -1,5 +1,4 @@
 package com.abdolphininfratech.retrofit;
-
 import com.abdolphininfratech.Model.Block.ResponseBlock;
 import com.abdolphininfratech.Model.ResponseForgotPassword;
 import com.abdolphininfratech.Model.ResponsePayoutRequest;

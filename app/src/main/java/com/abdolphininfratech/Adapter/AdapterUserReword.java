@@ -39,7 +39,7 @@ public class AdapterUserReword extends RecyclerView.Adapter<AdapterUserReword.Vi
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         //inpt = inpt.replace(".", "");
-        Picasso.with(context).load("https://abdolphininfratech.com/"+models.get(i).getRewardImage().replaceAll("../../","")).into(viewHolder.rewordImg);
+        Picasso.get().load("https://abdolphininfratech.com/"+models.get(i).getRewardImage().replaceAll("../../","")).into(viewHolder.rewordImg);
 
         viewHolder.tvStatus.setText(models.get(i).getStatus());
         viewHolder.tvQuelifyDate.setText(models.get(i).getQualifyDate());

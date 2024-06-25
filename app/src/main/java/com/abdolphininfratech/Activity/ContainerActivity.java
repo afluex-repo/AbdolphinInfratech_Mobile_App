@@ -37,7 +37,6 @@ import com.abdolphininfratech.Fragment.ViewProfile;
 import com.abdolphininfratech.R;
 import com.abdolphininfratech.constants.BaseActivity;
 import com.google.android.material.navigation.NavigationView;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
