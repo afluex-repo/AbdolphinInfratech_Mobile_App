@@ -1,12 +1,9 @@
 package com.abdolphininfratech.app;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 
 
 public class PreferencesManager {
-
-
     //app login variables
     private static final String PREF_NAME = "com.hmgreencity.PREF";
     private static final String Full_Name = "Full_Name";

@@ -4,17 +4,16 @@ plugins {
 }
 
 android {
-
-    compileSdkVersion 33
+    compileSdkVersion 34
     buildToolsVersion "30.0.3"
 
     defaultConfig {
+
         applicationId "com.abdolphininfratech"
         minSdkVersion 28
-        targetSdkVersion 33
-        versionCode 18
-        versionName "2.16"
-
+        targetSdkVersion 34
+        versionCode 19
+        versionName "2.17"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }

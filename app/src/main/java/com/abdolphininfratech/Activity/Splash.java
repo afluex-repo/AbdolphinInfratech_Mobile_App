@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Activity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -12,12 +11,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
-import androidx.cardview.widget.CardView;
-
 import com.abdolphininfratech.Model.responseLogin.ResponseLogin;
 import com.abdolphininfratech.R;
 import com.abdolphininfratech.app.PreferencesManager;
@@ -25,7 +20,6 @@ import com.abdolphininfratech.common.NetworkUtils;
 import com.abdolphininfratech.constants.BaseActivity;
 import com.abdolphininfratech.retrofit.ApiServices;
 import com.abdolphininfratech.retrofit.ServiceGenerator;
-import com.bumptech.glide.Glide;
 import com.github.javiersantos.appupdater.AppUpdater;
 import com.github.javiersantos.appupdater.AppUpdaterUtils;
 import com.github.javiersantos.appupdater.enums.AppUpdaterError;
@@ -33,19 +27,17 @@ import com.github.javiersantos.appupdater.enums.Display;
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
 import com.github.javiersantos.appupdater.objects.Update;
 import com.scottyab.rootbeer.RootBeer;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Splash extends BaseActivity {
 
+public class Splash extends BaseActivity {
     @BindView(R.id.imageView)
     ImageView imageView;
     @BindView(R.id.tv_version)

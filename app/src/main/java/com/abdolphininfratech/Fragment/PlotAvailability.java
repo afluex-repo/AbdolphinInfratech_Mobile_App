@@ -1,6 +1,7 @@
 package com.abdolphininfratech.Fragment;
-
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -8,23 +9,14 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.abdolphininfratech.Activity.ContainerActivity;
-import com.abdolphininfratech.Activity.Login;
-import com.abdolphininfratech.Adapter.AdapterPayoutLedger;
 import com.abdolphininfratech.Adapter.AdapterPlotAvailability;
 import com.abdolphininfratech.Model.Block.LstBlock;
 import com.abdolphininfratech.Model.Block.ResponseBlock;
@@ -35,7 +27,6 @@ import com.abdolphininfratech.Model.Site.ResponseSite;
 import com.abdolphininfratech.Model.SiteType.Lstsitetype;
 import com.abdolphininfratech.Model.SiteType.ResponseSiteType;
 import com.abdolphininfratech.Model.request.RequestPlotAvailability;
-import com.abdolphininfratech.Model.responsePayoutLedger.ResponsePayoutLedger;
 import com.abdolphininfratech.Model.responsePlotAvability.ResponsePlotAvailability;
 import com.abdolphininfratech.R;
 import com.abdolphininfratech.app.PreferencesManager;
@@ -43,22 +34,11 @@ import com.abdolphininfratech.common.LoggerUtil;
 import com.abdolphininfratech.common.NetworkUtils;
 import com.abdolphininfratech.common.Utils;
 import com.abdolphininfratech.constants.BaseFragment;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.JsonObject;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -142,6 +122,7 @@ public class PlotAvailability extends BaseFragment {
         LoggerUtil.logItem(object);
         Call<ResponsePlotAvailability> call = apiServices.getPlotAvailability(object);
         call.enqueue(new Callback<ResponsePlotAvailability>() {
+            @SuppressLint("SuspiciousIndentation")
             @Override
             public void onResponse(Call<ResponsePlotAvailability> call, Response<ResponsePlotAvailability> response) {
                 hideLoading();
@@ -180,8 +161,12 @@ public class PlotAvailability extends BaseFragment {
         EditText et_payout_number=sheetView.findViewById(R.id.et_plot_number);
         Button btn_cancel = sheetView.findViewById(R.id.btn_cancel);
         Button btn_search = sheetView.findViewById(R.id.btn_search);
-        sitepopupmenu = new PopupMenu(context, tvSelectSite);
-        siteTypeMenu = new PopupMenu(context, tvSiteType);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            sitepopupmenu = new PopupMenu(context, tvSelectSite);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            siteTypeMenu = new PopupMenu(context, tvSiteType);
+        }
         sectorMenu = new PopupMenu(context, tvSector);
         blockMenu = new PopupMenu(context, tvBlock);
 

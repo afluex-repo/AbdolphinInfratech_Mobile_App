@@ -1,37 +1,32 @@
 package com.abdolphininfratech.Adapter;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.abdolphininfratech.Model.responseSummsryReport.LstSummary;
 import com.abdolphininfratech.R;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 public class AdapterSummaryReport extends RecyclerView.Adapter<AdapterSummaryReport.ViewHolder> {
-
-
-
     private List<LstSummary> models;
     private Context context;
 
     public AdapterSummaryReport(List<LstSummary> models, Context context) {
         this.models = models;
         this.context = context;
+
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_summary_report, viewGroup, false);
         return new ViewHolder(view);
+
     }
 
     @Override
@@ -39,7 +34,6 @@ public class AdapterSummaryReport extends RecyclerView.Adapter<AdapterSummaryRep
 
         viewHolder.tvBranchName.setText(models.get(i).getBranchName());
         viewHolder.tvBookingNumber.setText(models.get(i).getBookingNumber());
-        //viewHolder.tvAffiliateInfo.setText(models.get(i).getA());
         viewHolder.tvCustomerInfo.setText(models.get(i).getCustomerName());
         viewHolder.tvPlot.setText(models.get(i).getPlotNumber());
         viewHolder.tvActualPlotAmount.setText(models.get(i).getAmount());

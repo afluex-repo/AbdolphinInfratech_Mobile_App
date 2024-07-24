@@ -74,41 +74,23 @@ public class Dashboard extends BaseFragment {
     TextView SelfRegistry;
     @BindView(R.id.Team_Registry)
     TextView TeamRegistry;
-
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
     @BindView(R.id.container3)
     LinearLayout container3;
     @BindView(R.id.chart1)
     PieChart chart1;
-//    @BindView(R.id.et_headline)
-//    TextView etHeadline;
-//    @BindView(R.id.view_news)
-//    TextView viewNews;
-
     @BindView(R.id.slider)
     SliderView sliderView;
     private int[] yValues =new int[4];
     private String[] xValues = new String[4];
     ArrayList<Lstnewsdetail> lstnewsdetails;
 
-    //,
-//
-    // colors for different sections in pieChart
-//    public static  final int[] MY_COLORS = {
-//            Color.rgb(78,105,226),  Color.rgb(255,0,0), Color.rgb(219,60,55), Color.rgb(0,101,0)
-//    };
-
-
     public static final int[] MY_COLORS = {
-//            Color.rgb(78, 105, 226),
-//            Color.rgb(255, 0, 100),
-//            Color.rgb(219, 60, 55),
-//            Color.rgb(0, 101, 70)
-            Color.BLUE,        // Blue
-            Color.MAGENTA,     // Magenta
-            Color.RED,         // Red
-            Color.GREEN        // Green
+         Color.BLUE,
+            Color.MAGENTA,
+            Color.RED,
+            Color.GREEN
     };
 
 
@@ -130,31 +112,28 @@ public class Dashboard extends BaseFragment {
         loadList();
 
         chart1.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
-
             @Override
             public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
-                // display msg when value selected
                 if (e == null)
                     return;
 
                 Toast.makeText(getContext(),
                         xValues[e.getXIndex()] + " is " + e.getVal() + "", Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onNothingSelected() {
 
             }
         });
-
         return view;
-    }
 
+    }
 
     @Override
     public void onDestroy() {
         unbinder.unbind();
         super.onDestroy();
+
     }
 
     private void getData() {
@@ -174,7 +153,6 @@ public class Dashboard extends BaseFragment {
                     if (response.body().getStatus().equalsIgnoreCase("0")) {
                         TotalAssociates.setText(response.body().getLstassociate().get(0).getTotalAssociate());
                         TotalActiveId.setText(response.body().getLstassociate().get(0).getTotalActiveId());
-                        //TotalBusiness.setText(response.body().getLstassociate().get(0).getTotalBusiness());
                         SelfBusiness.setText(response.body().getLstassociate().get(0).getSelfBusiness());
                         TotalBooking.setText(response.body().getLstassociate().get(0).getTotalBooking());
                         TeamBusiness.setText(response.body().getLstassociate().get(0).getTeamBusiness());
@@ -248,13 +226,12 @@ public class Dashboard extends BaseFragment {
         private DecimalFormat mFormat;
 
         public MyValueFormatter() {
-            mFormat = new DecimalFormat("###,###,##0"); // use one decimal if needed
+            mFormat = new DecimalFormat("###,###,##0");
         }
 
         @Override
         public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {
-            // write your logic here
-            return mFormat.format(value) + ""; // e.g. append a dollar-sign
+            return mFormat.format(value) + "";
         }
 
     }
@@ -269,24 +246,15 @@ public class Dashboard extends BaseFragment {
         progressDialog.setCancelable(false);
         progressDialog.setIndeterminate(true);
         progressDialog.show();
-        //making the progressbar visible
-        //creating a string request to send request to the url
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 progressDialog.dismiss();
 
                 try {
-                    //getting the whole json object from the response
                     JSONObject obj = new JSONObject(response);
-
-                    //we have the array named hero inside the object
-                    //so here we are getting that json array
                     JSONArray heroArray = obj.getJSONArray("lstdata");
-
-                    //now looping through all the elements of the json array
                     for (int i = 0; i < heroArray.length(); i++) {
-                        //getting the json object of the particular index inside the array
                         JSONObject heroObject = heroArray.getJSONObject(i);
                         String t = heroObject.get("Title").toString();
                         JSONArray jsonArray = heroObject.getJSONArray("lstgraphdetails");
@@ -303,12 +271,6 @@ public class Dashboard extends BaseFragment {
                         setDataForPieChart();
                     }
 
-                    //creating custom adapter object
-                          /*  ListViewAdapter adapter = new ListViewAdapter(heroList, getApplicationContext());
-
-                            //adding the adapter to listview
-                            listView.setAdapter(adapter);*/
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -320,35 +282,25 @@ public class Dashboard extends BaseFragment {
 
             }
         } );
-        //creating a request queue
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-
-        //adding the string request to request queue
         requestQueue.add(stringRequest);
     }
 
     private void getNews() {
-        //  showLoading();
         JsonObject object = new JsonObject();
         object.addProperty("AssociateID", PreferencesManager.getInstance(context).getUserId());
         LoggerUtil.logItem(object);
 
         Call<ResponseNews> call = apiServices.getNews(object);
-//        lstnewsdetails=new ArrayList<>();
         call.enqueue(new Callback<ResponseNews>() {
             @Override
             public void onResponse(Call<ResponseNews> call, Response<ResponseNews> response) {
-                //hideLoading();
                 try {
                     LoggerUtil.logItem(response.body());
                     if (response.body().getStatus().equalsIgnoreCase("0")) {
-
-//                        etHeadline.setText(response.body().getLstnewsdetail().get(0).getNewsHeading());
                         lstnewsdetails=new ArrayList<>(response.body().getLstnewsdetail());
                         SliderAdapter sliderAdapter=new SliderAdapter(getActivity(),lstnewsdetails);
                         sliderView.setSliderAdapter(sliderAdapter);
-
-
                     } else showMessage(response.body().getErrorMessage());
                 } catch (Exception e) {
 
