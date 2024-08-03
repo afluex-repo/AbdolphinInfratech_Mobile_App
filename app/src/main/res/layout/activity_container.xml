@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/bg"
+    android:background="@color/colorPrimary"
     tools:openDrawer="start">
 
     <include
@@ -19,9 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@drawable/gradient_bg"
         android:fitsSystemWindows="true"
         android:visibility="visible"
         app:headerLayout="@layout/sidemenu_layout" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

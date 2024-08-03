@@ -290,7 +290,6 @@ public class Dashboard extends BaseFragment {
         JsonObject object = new JsonObject();
         object.addProperty("AssociateID", PreferencesManager.getInstance(context).getUserId());
         LoggerUtil.logItem(object);
-
         Call<ResponseNews> call = apiServices.getNews(object);
         call.enqueue(new Callback<ResponseNews>() {
             @Override

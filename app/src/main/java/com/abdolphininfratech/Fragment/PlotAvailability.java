@@ -47,6 +47,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class PlotAvailability extends BaseFragment {
 
     @BindView(R.id.btn_search)

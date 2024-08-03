@@ -1,13 +1,24 @@
 package com.abdolphininfratech.retrofit;
+import com.abdolphininfratech.Model.AdvancePaymentList.ResAdvancePaymentList;
 import com.abdolphininfratech.Model.Block.ResponseBlock;
+import com.abdolphininfratech.Model.BusinessReport.ResBusinessReport;
+import com.abdolphininfratech.Model.DownlineBusinessReport.ResDownlineBusinessReport;
+import com.abdolphininfratech.Model.GetDownLineBusinessById.ResGetDownLineBusinessById;
+import com.abdolphininfratech.Model.KYCUPLOAD.ResKYCUPLOAD;
+import com.abdolphininfratech.Model.PrintVisitorList.ResPrintVisitorList;
 import com.abdolphininfratech.Model.ResponseForgotPassword;
 import com.abdolphininfratech.Model.ResponsePayoutRequest;
 import com.abdolphininfratech.Model.ResponseSavePayout;
 import com.abdolphininfratech.Model.ResponseUpdateProfile;
 import com.abdolphininfratech.Model.ResponseViewProfile;
 import com.abdolphininfratech.Model.Sector.ResponseSector;
+import com.abdolphininfratech.Model.SelfDownlineBusinessReport.ResSelfDownlineBusinessReport;
 import com.abdolphininfratech.Model.Site.ResponseSite;
 import com.abdolphininfratech.Model.SiteType.ResponseSiteType;
+import com.abdolphininfratech.Model.UploadKycList.ReqUploadKycList;
+import com.abdolphininfratech.Model.UploadKycList.ResUploadKycList;
+import com.abdolphininfratech.Model.VisitorList.ReqVisistorList;
+import com.abdolphininfratech.Model.VisitorList.ResVisitorList;
 import com.abdolphininfratech.Model.request.RequestBookingDetails;
 import com.abdolphininfratech.Model.request.RequestPlotAvailability;
 import com.abdolphininfratech.Model.request.RequestUpdateProfile;
@@ -28,7 +39,6 @@ import com.abdolphininfratech.Model.responseSummsryReport.ResponseSummaryReport;
 import com.abdolphininfratech.Model.responseUnpaidIncome.ResponseUnpaidIncome;
 import com.abdolphininfratech.Model.responseUserReword.ResponseUserReword;
 import com.google.gson.JsonObject;
-
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -44,7 +54,6 @@ public interface ApiServices {
 
     @POST("WebAPI/GettownshipbookingDetails")
     Call<ResponseLogin> GettownshipbookingDetails();
-
 
     @POST("WebAPI/ForgetPass")
     Call<ResponseForgotPassword> getForgotPassword(@Body JsonObject login);
@@ -84,10 +93,8 @@ public interface ApiServices {
     @POST("WebAPI/PayoutRequestReport")
     Call<ResponsePayoutRequestList>getPayoutRequestReportList(@Body JsonObject login);
 
-
     @POST("WebAPI/Details")
     Call<ResponseLedger>getLedger(@Body JsonObject login);
-
 
     @POST("WebAPI/GetSummaryReport")
     Call<ResponseSummaryReport>getSummaryReport(@Body JsonObject login);
@@ -110,7 +117,6 @@ public interface ApiServices {
     @POST("WebAPI/GetBlock")
     Call<ResponseBlock>getBlock(@Body JsonObject login);
 
-
     @POST("WebAPI/SaveEnquiry")
     Call<ResponseEnquriy>getEnquiry(@Body JsonObject login);
     @POST("WebAPI/EnquiryList")
@@ -119,8 +125,53 @@ public interface ApiServices {
     @POST("api/ImageUpload/user/PostUserImage")
     Call<JsonObject> uploadProfilePic(@Part("fk_UserId") RequestBody fk_UserId,
                                                  @Part() MultipartBody.Part file);
-
     @POST("WebAPI/SavePayoutRequest")
     Call<ResponseSavePayout>SavePayout(@Body JsonObject login);
+
+// kYC UPLOAD
+    @Multipart
+    @POST("WebAPI/KYCDocuments")
+    Call<ResKYCUPLOAD> UploadKyc(
+            @Part("UserID") RequestBody userID,
+            @Part("DocumentNumber") RequestBody documentNumber,
+            @Part("PanNumber") RequestBody panNumber,
+            @Part("AdharNumber") RequestBody adharNumber,
+            @Part("AccountHolderName") RequestBody accountHolderName,
+            @Part("BankName") RequestBody bankName,
+            @Part("IFSCCode") RequestBody ifscCode,
+            @Part("BankBranch") RequestBody bankBranch,
+            @Part MultipartBody.Part adharImage,
+            @Part MultipartBody.Part adharBacksideImage,
+            @Part MultipartBody.Part panImage,
+            @Part MultipartBody.Part documentImage
+    );
+    @POST("WebAPI/GetKYCList")
+    Call<ResUploadKycList> getKYCList(@Body ReqUploadKycList requestObject);
+
+//    @POST("WebAPI/VisitorList")
+//    Call<ResVisitorList> getVisitorList(@Body ReqVisistorList requestObject);
+
+    @POST("WebAPI/VisitorList")
+    Call<ResVisitorList> getVisitorList(@Body JsonObject requestObject);
+
+    @POST("WebAPI/PrintVisitor")
+    Call<ResPrintVisitorList> getprintVisitor(@Body JsonObject requestObject);
+
+    @POST("WebAPI/AdvancePaymentList")
+    Call<ResAdvancePaymentList> getAdavncePaymentList(@Body JsonObject requestObject);
+
+
+    @POST("WebAPI/BusinessReport")
+    Call<ResBusinessReport> getBusinessReport(@Body JsonObject requestObject);
+
+    @POST("WebAPI/DownBusinessReport")
+    Call<ResDownlineBusinessReport> getDownBusinessReport(@Body JsonObject requestObject);
+
+    @POST("WebAPI/GetDownLineBusinessById")
+    Call<ResGetDownLineBusinessById> getdownBusiness(@Body JsonObject requestObject);
+
+    @POST("WebAPI/GetSelfDownlineBusinessReport")
+    Call<ResSelfDownlineBusinessReport> getselfdownlinebusiness(@Body JsonObject requestObject);
+
 
 }

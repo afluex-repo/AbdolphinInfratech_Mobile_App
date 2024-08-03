@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -30,6 +29,7 @@ import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class Downline extends BaseFragment {
 
@@ -71,8 +71,6 @@ public class Downline extends BaseFragment {
                     AdapterDownline adapter = new AdapterDownline(response.body().getLstdownline(), getContext());
                     recyclerview1.setAdapter(adapter);
                 }
-
-
 
             }
 

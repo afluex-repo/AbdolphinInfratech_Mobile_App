@@ -13,6 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/colorPrimary"
             android:id="@+id/container">
 
             <LinearLayout
@@ -25,7 +26,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_margin="40dp"
+                    android:layout_margin="30dp"
                     android:layout_marginEnd="16dp"
                     android:fontFamily="sans-serif-black"
                     android:gravity="center_vertical"
@@ -37,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:contentPadding="8dp"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="100dp"
                     android:layout_margin="5dp"
                     app:cardCornerRadius="32dp">
                     <LinearLayout
@@ -51,6 +52,7 @@
                         <RelativeLayout
                             android:layout_width="328dp"
                             android:gravity="center"
+                            android:backgroundTint="@color/white"
                             android:layout_height="wrap_content">
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/card1"
@@ -59,14 +61,14 @@
                                 android:outlineAmbientShadowColor="@color/black"
                                 android:outlineSpotShadowColor="@color/black"
                                 android:clipToPadding="false"
+                                android:background="@color/white"
                                 android:clipChildren="false"
                                 android:layout_alignParentStart="true"
-                                app:cardElevation="32dp"
+                                app:cardElevation="22dp"
                                 app:contentPadding="5dp"
-                                app:cardPreventCornerOverlap="false"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="16dp"
-                                app:cardCornerRadius="32dp">
+                                app:cardCornerRadius="22dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -75,7 +77,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/total_associate"/>
+                                        android:src="@drawable/total_associate"
+                                        app:tint="@color/colorPrimary" />
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
@@ -124,8 +127,8 @@
                                 android:clipToPadding="false"
                                 android:outlineAmbientShadowColor="@color/black"
                                 android:outlineSpotShadowColor="@color/black"
-                                app:cardCornerRadius="32dp"
-                                app:cardElevation="32dp"
+                                app:cardCornerRadius="22dp"
+                                app:cardElevation="22dp"
                                 app:cardPreventCornerOverlap="false"
                                 app:contentPadding="5dp">
                                 <LinearLayout
@@ -139,7 +142,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/total_active_id" />
+                                        android:src="@drawable/total_active_id"
+                                        app:tint="@color/colorPrimary"/>
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -180,12 +184,12 @@
                                 android:clipToPadding="false"
                                 android:clipChildren="false"
                                 android:layout_alignParentStart="true"
-                                app:cardElevation="32dp"
+                                app:cardElevation="22dp"
                                 app:contentPadding="5dp"
                                 app:cardPreventCornerOverlap="false"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="16dp"
-                                app:cardCornerRadius="32dp">
+                                app:cardCornerRadius="22dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -194,7 +198,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/team_buisness"/>
+                                        android:src="@drawable/team_buisness"
+                                        app:tint="@color/colorPrimary"/>
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_weight="1"
@@ -225,22 +230,17 @@
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="140dp"
-
                                 android:layout_height="140dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_margin="16dp"
-
-
                                 android:layout_marginBottom="5dp"
                                 android:layout_toRightOf="@id/card2"
                                 android:clipChildren="false"
                                 android:clipToPadding="false"
                                 android:outlineAmbientShadowColor="@color/black"
                                 android:outlineSpotShadowColor="@color/black"
-
-
-                                app:cardCornerRadius="32dp"
-                                app:cardElevation="32dp"
+                                app:cardCornerRadius="22dp"
+                                app:cardElevation="22dp"
                                 app:cardPreventCornerOverlap="false"
                                 app:contentPadding="5dp">
                                 <LinearLayout
@@ -253,7 +253,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/self_buisness"/>
+                                        android:src="@drawable/self_buisness"
+                                        app:tint="@color/colorPrimary"/>
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_weight="1"
@@ -285,28 +286,21 @@
                         </RelativeLayout>
                         <RelativeLayout
                             android:layout_width="328dp"
+                            android:background="@color/white"
+                            android:backgroundTint="@color/white"
                             android:layout_height="wrap_content">
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/card3"
                                 android:layout_width="140dp"
                                 android:layout_height="140dp"
-                                android:outlineAmbientShadowColor="@color/black"
-                                android:outlineSpotShadowColor="@color/black"
                                 android:clipToPadding="false"
                                 android:clipChildren="false"
-
-
-
                                 android:layout_alignParentStart="true"
-                                app:cardElevation="32dp"
-                                app:contentPadding="5dp"
+                                app:cardElevation="22dp"
                                 app:cardPreventCornerOverlap="false"
-
-
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="16dp"
-
-                                app:cardCornerRadius="32dp"
+                                app:cardCornerRadius="22dp"
                                 >
 
                                 <LinearLayout
@@ -319,7 +313,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/self_booking"/>
+                                        android:src="@drawable/self_booking"
+                                        app:tint="@color/colorPrimary"/>
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_weight="1"
@@ -363,26 +358,20 @@
                                 android:clipToPadding="false"
                                 android:outlineAmbientShadowColor="@color/black"
                                 android:outlineSpotShadowColor="@color/black"
-
-
-                                app:cardCornerRadius="32dp"
-                                app:cardElevation="32dp"
+                                app:cardCornerRadius="22dp"
+                                app:cardElevation="22dp"
                                 app:cardPreventCornerOverlap="false"
                                 app:contentPadding="5dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
-
                                     android:layout_height="match_parent"
-
                                     android:orientation="vertical">
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:src="@drawable/total_booking"
-
-                                        />
-
+                                        app:tint="@color/colorPrimary" />
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_weight="1"
@@ -407,10 +396,6 @@
                                             android:textColor="#000"
                                             android:textStyle="bold"
                                             />
-
-
-
-
                                     </LinearLayout>
                                 </LinearLayout>
                             </androidx.cardview.widget.CardView>
@@ -428,30 +413,23 @@
                                 android:outlineSpotShadowColor="@color/black"
                                 android:clipToPadding="false"
                                 android:clipChildren="false"
-
-
-
                                 android:layout_alignParentStart="true"
-                                app:cardElevation="32dp"
+                                app:cardElevation="22dp"
                                 app:contentPadding="5dp"
                                 app:cardPreventCornerOverlap="false"
-
-
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="16dp"
-
-                                app:cardCornerRadius="32dp">
+                                app:cardCornerRadius="22dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
-
                                     android:layout_height="match_parent"
-
                                     android:orientation="vertical">
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/team_booking"/>
+                                        android:src="@drawable/team_booking"
+                                        app:tint="@color/colorPrimary"/>
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -481,22 +459,17 @@
                             </androidx.cardview.widget.CardView>
                             <androidx.cardview.widget.CardView
                                 android:layout_width="140dp"
-
                                 android:layout_height="140dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_margin="16dp"
-
-
                                 android:layout_marginBottom="5dp"
                                 android:layout_toRightOf="@id/card4"
                                 android:clipChildren="false"
                                 android:clipToPadding="false"
                                 android:outlineAmbientShadowColor="@color/black"
                                 android:outlineSpotShadowColor="@color/black"
-
-
-                                app:cardCornerRadius="32dp"
-                                app:cardElevation="32dp"
+                                app:cardCornerRadius="22dp"
+                                app:cardElevation="22dp"
                                 app:cardPreventCornerOverlap="false"
                                 app:contentPadding="5dp"
                                 >
@@ -510,7 +483,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/total_registry"/>
+                                        android:src="@drawable/total_registry"
+                                        app:tint="@color/colorPrimary"/>
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_weight="1"
@@ -554,31 +528,23 @@
                                 android:outlineSpotShadowColor="@color/black"
                                 android:clipToPadding="false"
                                 android:clipChildren="false"
-
-
-
                                 android:layout_alignParentStart="true"
-                                app:cardElevation="32dp"
-                                app:contentPadding="5dp"
+                                app:cardElevation="22dp"
+                                app:contentPadding="22dp"
                                 app:cardPreventCornerOverlap="false"
-
-
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="16dp"
-
                                 app:cardCornerRadius="32dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
-
                                     android:layout_height="match_parent"
-
                                     android:orientation="vertical">
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/self_registry"/>
-
+                                        android:src="@drawable/self_registry"
+                                        app:tint="@color/colorPrimary"/>
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_weight="1"
@@ -590,8 +556,7 @@
                                             android:layout_height="wrap_content"
                                             android:gravity="center"
                                             android:textColor="@color/black"
-                                            android:text="Self Registry"
-                                            />
+                                            android:text="Self Registry" />
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
@@ -599,45 +564,35 @@
                                             android:layout_gravity="center"
                                             android:gravity="center"
                                             android:textColor="#000"
-                                            android:id="@+id/Self_Registry"
-
-                                            />
-
+                                            android:id="@+id/Self_Registry" />
                                     </LinearLayout>
                                 </LinearLayout>
                             </androidx.cardview.widget.CardView>
                             <androidx.cardview.widget.CardView
                                 android:layout_width="140dp"
-
                                 android:layout_height="140dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_margin="16dp"
-
-
                                 android:layout_marginBottom="5dp"
                                 android:layout_toRightOf="@id/card5"
                                 android:clipChildren="false"
                                 android:clipToPadding="false"
                                 android:outlineAmbientShadowColor="@color/black"
                                 android:outlineSpotShadowColor="@color/black"
-
-
-                                app:cardCornerRadius="32dp"
-                                app:cardElevation="32dp"
+                                app:cardCornerRadius="22dp"
+                                app:cardElevation="22dp"
                                 app:cardPreventCornerOverlap="false"
-                                app:contentPadding="5dp"
-                                >
+                                app:contentPadding="5dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
-
                                     android:layout_height="match_parent"
-
                                     android:orientation="vertical">
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:src="@drawable/team_registry"/>
+                                        android:src="@drawable/team_registry"
+                                        app:tint="@color/colorPrimary"/>
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_weight="1"
@@ -650,8 +605,7 @@
                                             android:layout_height="wrap_content"
                                             android:gravity="center"
                                             android:textColor="@color/black"
-                                            android:text="Team Registry"
-                                            />
+                                            android:text="Team Registry" />
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
@@ -659,18 +613,12 @@
                                             android:id="@+id/Team_Registry"
                                             android:textColor="#000"
                                             android:textStyle="bold"
-                                            android:gravity="center"
-                                            />
-
+                                            android:gravity="center"/>
                                     </LinearLayout>
                                 </LinearLayout>
-
                             </androidx.cardview.widget.CardView>
-
                         </RelativeLayout>
-
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
             <LinearLayout
@@ -678,7 +626,6 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:orientation="vertical">
-
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/chart1"
                     android:layout_width="200dp"

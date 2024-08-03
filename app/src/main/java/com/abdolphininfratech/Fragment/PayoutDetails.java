@@ -153,7 +153,6 @@ public class PayoutDetails extends BaseFragment {
         });
 
 
-
         btn_search.setOnClickListener(v -> {
             searchDialog.dismiss();
             getDataSearch(tv_start_date.getText().toString().trim(),

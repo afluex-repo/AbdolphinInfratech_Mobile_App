@@ -1,24 +1,18 @@
 package com.abdolphininfratech.Adapter;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.abdolphininfratech.Model.responseDownline.Lstdownline;
 import com.abdolphininfratech.R;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 public class AdapterDownline extends RecyclerView.Adapter<AdapterDownline.ViewHolder> {
-
-
 
     private List<Lstdownline> models;
     private Context context;
