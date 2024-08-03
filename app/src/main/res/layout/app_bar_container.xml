@@ -55,7 +55,7 @@
                     android:layout_height="40dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/ic_profile_user"
+                    android:background="@drawable/logo"
                     android:padding="15dp"
                     android:scaleX="0.7"
                     android:scaleY="0.6" />
