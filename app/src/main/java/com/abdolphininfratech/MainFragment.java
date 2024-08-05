@@ -1,5 +1,4 @@
 package com.abdolphininfratech;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,15 +9,14 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.abdolphininfratech.Fragment.Dashboard;
 import com.abdolphininfratech.Fragment.ViewProfile;
 import com.abdolphininfratech.databinding.FragmentMainBinding;
+
 
 public class MainFragment extends Fragment {
     private static final int REQUEST_CALL_PERMISSION = 1;
@@ -116,6 +114,14 @@ public class MainFragment extends Fragment {
         }
     }
 
+    private void openWebsite() {
+        String url = "https://abdolphininfratech.com/";
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        if (browserIntent.resolveActivity(requireActivity().getPackageManager()) != null) {
+            startActivity(browserIntent);
+        }
+    }
+
     private void startCallIntent(String phoneNumber) {
         Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
         if (callIntent.resolveActivity(getActivity().getPackageManager()) != null) {
@@ -145,12 +151,6 @@ public class MainFragment extends Fragment {
     }
 
 
-    private void openWebsite() {
-        String url = "https://abdolphininfratech.com/";
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        if (browserIntent.resolveActivity(requireActivity().getPackageManager()) != null) {
-            startActivity(browserIntent);
-        }
-    }
+
 
 }
