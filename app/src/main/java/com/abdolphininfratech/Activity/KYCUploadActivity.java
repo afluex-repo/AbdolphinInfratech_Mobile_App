@@ -123,13 +123,14 @@ public class KYCUploadActivity extends BaseActivity {
             }
         });
 
+
         binding.adharcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 binding.panCardLayout.setVisibility(View.GONE);
                 binding.adharCardLayout.setVisibility(View.VISIBLE);
-                binding.adharcard.setBackgroundColor(Color.parseColor("#087368"));
-                binding.pancard.setBackgroundColor(Color.parseColor("#FF03DAC5"));
+                binding.adharcard.setBackgroundColor(Color.parseColor("#7b2f00"));
+                binding.pancard.setBackgroundColor(Color.parseColor("#f9d98d"));
 
             }
         });
@@ -139,8 +140,8 @@ public class KYCUploadActivity extends BaseActivity {
                 binding.adharCardLayout.setVisibility(View.GONE);
                 binding.panCardLayout.setVisibility(View.VISIBLE);
                 //binding.pancard.setBackgroundColor(Color.BLUE);
-                binding.pancard.setBackgroundColor(Color.parseColor("#087368"));
-                binding.adharcard.setBackgroundColor(Color.parseColor("#FF03DAC5"));
+                binding.pancard.setBackgroundColor(Color.parseColor("#7b2f00"));
+                binding.adharcard.setBackgroundColor(Color.parseColor("#f9d98d"));
 
             }
         });
@@ -149,23 +150,24 @@ public class KYCUploadActivity extends BaseActivity {
             public void onClick(View v) {
                 binding.IDProof.setVisibility(View.VISIBLE);
                 binding.bankdetails.setVisibility(View.GONE);
-                binding.id.setTextColor(Color.parseColor("#087368"));
+                binding.id.setTextColor(Color.parseColor("#f9d98d"));
                 binding.bank.setTextColor(Color.parseColor("#fafcfc"));
-                binding.idview.setBackgroundColor(Color.parseColor("#087368"));
+                binding.idview.setBackgroundColor(Color.parseColor("#f9d98d"));
                 binding.bankview.setBackgroundColor(Color.parseColor("#fafcfc"));
                 binding.nextbutton.setVisibility(View.VISIBLE);
                 binding.submitbutton.setVisibility(View.GONE);
 
             }
         });
+
         binding.bankdetailslayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 binding.IDProof.setVisibility(View.GONE);
                 binding.bankdetails.setVisibility(View.VISIBLE);
-                binding.bank.setTextColor(Color.parseColor("#087368"));
+                binding.bank.setTextColor(Color.parseColor("#f9d98d"));
                 binding.id.setTextColor(Color.parseColor("#fafcfc"));
-                binding.bankview.setBackgroundColor(Color.parseColor("#087368"));
+                binding.bankview.setBackgroundColor(Color.parseColor("#f9d98d"));
                 binding.idview.setBackgroundColor(Color.parseColor("#fafcfc"));
                 binding.nextbutton.setVisibility(View.GONE);
                 binding.submitbutton.setVisibility(View.VISIBLE);

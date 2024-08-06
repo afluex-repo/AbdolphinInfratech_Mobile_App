@@ -80,6 +80,7 @@ public class PlotAvailability extends BaseFragment {
         else showMessage(R.string.alert_internet);
 
         return view;
+
     }
     public void getData() {
         showLoading();

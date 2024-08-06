@@ -3,10 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     tools:context=".Activity.PrintVisitorListActivity">
 
  <LinearLayout
+     android:visibility="gone"
      android:layout_width="match_parent"
      android:background="@color/colorPrimary"
      android:orientation="horizontal"
@@ -29,9 +32,245 @@
       android:layout_height="wrap_content"/>
  </LinearLayout>
 
-  <androidx.recyclerview.widget.RecyclerView
+ <androidx.core.widget.NestedScrollView
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical">
+  <LinearLayout
       android:layout_width="match_parent"
-      android:id="@+id/printrecyclerview"
-      android:layout_marginTop="5dp"
-      android:layout_height="wrap_content"/>
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:id="@+id/Mainfragment">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+    <TextView
+
+        android:id="@+id/txt_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="0dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Welcome to"
+        android:textColor="#f9d98d"
+        android:textSize="18sp" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:src="@drawable/ablogo"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textColor="#f9d98d"
+        android:text="DOLPHIN INFRATECH"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="0dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:textStyle="normal"
+        android:padding="1dp"
+        android:text="BUILDERS &amp; DEVELOPERS PVT. LTD"
+        android:textColor="#f9d98d"
+        android:textSize="14sp" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="80dp"
+        app:cardCornerRadius="32dp"
+        app:contentPadding="8dp">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_marginTop="10dp"
+          android:gravity="center"
+          android:layout_height="wrap_content">
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           app:cardCornerRadius="10dp"
+           android:elevation="10dp"
+           android:backgroundTint="@color/colorPrimary"
+           android:layout_height="200dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="16dp"
+             android:layout_marginStart="10dp"
+             android:fontFamily="sans-serif-black"
+             android:padding="10dp"
+             android:text="Site Name :"
+             android:textColor="#f9d98d"
+             android:textSize="16sp"/>
+         <TextView
+             android:id="@+id/text1"
+             android:layout_width="match_parent"
+             android:text=""
+             android:textStyle="bold"
+             android:layout_marginStart="57dp"
+             android:layout_marginTop="0dp"
+             android:textColor="@color/white"
+             android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+       </androidx.cardview.widget.CardView>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_marginEnd="5dp"
+          android:orientation="horizontal"
+          android:layout_marginTop="40dp"
+          android:layout_height="wrap_content">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="16dp"
+           android:fontFamily="sans-serif-black"
+           android:padding="10dp"
+           android:text="Associate ID :"
+           android:textColor="#f9d98d"
+           android:textSize="18sp" />
+       <TextView
+           android:id="@+id/text2"
+           android:layout_width="match_parent"
+           android:text=""
+           android:textStyle="bold"
+           android:layout_gravity="center"
+           android:layout_marginStart="30dp"
+           android:layout_marginTop="0dp"
+           android:textColor="@color/white"
+           android:layout_height="wrap_content"/>
+
+      </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_marginEnd="5dp"
+         android:orientation="horizontal"
+         android:layout_marginTop="70dp"
+         android:layout_height="wrap_content">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="16dp"
+          android:fontFamily="sans-serif-black"
+          android:padding="10dp"
+          android:text="Associate Name :"
+          android:textColor="#f9d98d"
+          android:textSize="18sp" />
+      <TextView
+          android:id="@+id/text3"
+          android:layout_width="match_parent"
+          android:text=""
+          android:textStyle="bold"
+          android:layout_gravity="center"
+          android:layout_marginStart="0dp"
+          android:layout_marginTop="0dp"
+          android:textColor="@color/white"
+          android:layout_height="wrap_content"/>
+
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_marginEnd="5dp"
+         android:orientation="horizontal"
+         android:layout_marginTop="100dp"
+         android:layout_height="wrap_content">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="16dp"
+          android:fontFamily="sans-serif-black"
+          android:padding="10dp"
+          android:text="Amount:"
+          android:textColor="#f9d98d"
+          android:textSize="18sp" />
+      <TextView
+          android:id="@+id/text4"
+          android:layout_width="match_parent"
+          android:text=""
+          android:textStyle="bold"
+          android:layout_gravity="center"
+          android:layout_marginStart="73dp"
+          android:layout_marginTop="0dp"
+          android:textColor="@color/white"
+          android:layout_height="wrap_content"/>
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_marginEnd="5dp"
+         android:orientation="horizontal"
+         android:layout_marginTop="130dp"
+         android:layout_height="wrap_content">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="16dp"
+          android:fontFamily="sans-serif-black"
+          android:padding="10dp"
+          android:text="Visit Date:"
+          android:textColor="#f9d98d"
+          android:textSize="18sp" />
+      <TextView
+          android:id="@+id/text5"
+          android:layout_width="match_parent"
+          android:text=""
+          android:textStyle="bold"
+          android:layout_gravity="center"
+          android:layout_marginStart="58dp"
+          android:layout_marginTop="0dp"
+          android:textColor="@color/white"
+          android:layout_height="wrap_content"/>
+     </LinearLayout>
+
+     <androidx.recyclerview.widget.RecyclerView
+         android:layout_width="match_parent"
+         android:id="@+id/printrecyclerview"
+         android:layout_marginTop="230dp"
+         android:layout_height="wrap_content"/>
+
+
+     <TableLayout
+         android:visibility="gone"
+         android:id="@+id/table_layout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="20dp"
+         android:stretchColumns="1"
+         android:layout_marginTop="230dp"
+         android:layout_marginBottom="16dp">
+     </TableLayout>
+    </androidx.cardview.widget.CardView>
+   </LinearLayout>
+  </LinearLayout>
+
+ </androidx.core.widget.NestedScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -60,8 +60,7 @@
                             android:padding="3dp"
                             android:text="Personal Information"
                             android:textAppearance="@style/TextFieldBold"
-                            android:background="@color/colorPrimary"
-                            android:textColor="@color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
                         <TextView
                             android:layout_width="match_parent"

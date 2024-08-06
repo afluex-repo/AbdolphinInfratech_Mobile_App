@@ -84,8 +84,7 @@
                                         android:layout_height="match_parent"
                                         android:id="@+id/container1"
                                         android:padding="10dp"
-                                        android:orientation="vertical"
-                                        >
+                                        android:orientation="vertical">
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_gravity="center"
@@ -93,9 +92,7 @@
                                             android:gravity="center"
                                             android:textColor="@color/black"
                                             android:id="@+id/Total_Associates1"
-                                            android:text="Total \n Associates"
-
-                                            />
+                                            android:text="Total \n Associates" />
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
@@ -103,24 +100,15 @@
                                             android:textColor="#000"
                                             android:textStyle="bold"
                                             android:text="2"
-                                            android:id="@+id/Total_Associates"
-                                            />
+                                            android:id="@+id/Total_Associates"/>
                                     </LinearLayout>
-
-
-
                                 </LinearLayout>
-
                             </androidx.cardview.widget.CardView>
-
                             <androidx.cardview.widget.CardView
                                 android:layout_width="140dp"
-
                                 android:layout_height="140dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_margin="16dp"
-
-
                                 android:layout_marginBottom="5dp"
                                 android:layout_toRightOf="@id/card1"
                                 android:clipChildren="false"
@@ -135,16 +123,13 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:orientation="vertical"
-
                                     android:weightSum="2">
-
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:src="@drawable/total_active_id"
                                         app:tint="@color/colorPrimary"/>
-
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
@@ -158,7 +143,6 @@
                                             android:gravity="center"
                                             android:text="Total \n Active Id"
                                             android:textColor="@color/black" />
-
                                         <TextView
                                             android:id="@+id/Total_Active_Id"
                                             android:layout_width="match_parent"
@@ -211,29 +195,23 @@
                                             android:layout_height="wrap_content"
                                             android:gravity="center"
                                             android:text="Team \n Business"
-                                            android:textColor="@color/black"
-                                            />
+                                            android:textColor="@color/black"/>
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/Team_Business"
                                             android:gravity="center"
                                             android:textColor="#000"
-                                            android:textStyle="bold"
-
-                                            />
+                                            android:textStyle="bold" />
                                     </LinearLayout>
                                 </LinearLayout>
-
                             </androidx.cardview.widget.CardView>
-
-
                             <androidx.cardview.widget.CardView
                                 android:layout_width="140dp"
                                 android:layout_height="140dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_margin="16dp"
-                                android:layout_marginBottom="5dp"
+                                android:layout_marginBottom="0dp"
                                 android:layout_toRightOf="@id/card2"
                                 android:clipChildren="false"
                                 android:clipToPadding="false"
@@ -274,8 +252,7 @@
                                             android:textStyle="bold"
                                             android:gravity="center"
                                             android:textColor="#000"
-
-                                            android:layout_marginTop="10dp"
+                                            android:layout_marginTop="7dp"
                                             android:id="@+id/Self_Business"
 
                                             />
@@ -297,6 +274,7 @@
                                 android:clipChildren="false"
                                 android:layout_alignParentStart="true"
                                 app:cardElevation="22dp"
+                                app:contentPadding="5dp"
                                 app:cardPreventCornerOverlap="false"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="16dp"
@@ -327,13 +305,11 @@
                                             android:layout_height="wrap_content"
                                             android:gravity="center"
                                             android:text="Self Booking"
-                                            android:textColor="@color/black"
-
-                                            />
+                                            android:textColor="@color/black"/>
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="10dp"
+                                            android:layout_marginTop="5dp"
                                             android:id="@+id/Self_Booking"
                                             android:gravity="center"
                                             android:textColor="#000"
@@ -346,13 +322,10 @@
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="140dp"
-
                                 android:layout_height="140dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_margin="16dp"
-
-
-                                android:layout_marginBottom="5dp"
+                                android:layout_marginBottom="0dp"
                                 android:layout_toRightOf="@id/card3"
                                 android:clipChildren="false"
                                 android:clipToPadding="false"
@@ -390,7 +363,7 @@
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="10dp"
+                                            android:layout_marginTop="2dp"
                                             android:id="@+id/Total_Booking"
                                             android:gravity="center"
                                             android:textColor="#000"
@@ -447,13 +420,11 @@
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="10dp"
+                                            android:layout_marginTop="3dp"
                                             android:id="@+id/Team_Booking"
                                             android:textColor="#000"
                                             android:gravity="center"
-                                            android:textStyle="bold"
-                                            />
-
+                                            android:textStyle="bold"/>
                                     </LinearLayout>
                                 </LinearLayout>
                             </androidx.cardview.widget.CardView>
@@ -462,7 +433,7 @@
                                 android:layout_height="140dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_margin="16dp"
-                                android:layout_marginBottom="5dp"
+                                android:layout_marginBottom="0dp"
                                 android:layout_toRightOf="@id/card4"
                                 android:clipChildren="false"
                                 android:clipToPadding="false"
@@ -471,13 +442,10 @@
                                 app:cardCornerRadius="22dp"
                                 app:cardElevation="22dp"
                                 app:cardPreventCornerOverlap="false"
-                                app:contentPadding="5dp"
-                                >
+                                app:contentPadding="5dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
-
                                     android:layout_height="match_parent"
-
                                     android:orientation="vertical">
                                     <ImageView
                                         android:layout_width="match_parent"
@@ -497,29 +465,22 @@
                                             android:layout_height="wrap_content"
                                             android:gravity="center"
                                             android:textColor="@color/black"
-                                            android:text="Total Registry"
-                                            />
+                                            android:text="Total Registry" />
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="10dp"
+                                            android:layout_marginTop="5dp"
                                             android:id="@+id/Total_Registry"
                                             android:gravity="center"
                                             android:textStyle="bold"
-                                            android:textColor="#000"
-
-                                            />
+                                            android:textColor="#000"/>
                                     </LinearLayout>
                                 </LinearLayout>
-
                             </androidx.cardview.widget.CardView>
-
                         </RelativeLayout>
                         <RelativeLayout
                             android:layout_width="328dp"
                             android:layout_height="wrap_content">
-
-
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/card5"
                                 android:layout_width="140dp"
@@ -530,11 +491,11 @@
                                 android:clipChildren="false"
                                 android:layout_alignParentStart="true"
                                 app:cardElevation="22dp"
-                                app:contentPadding="22dp"
+                                app:contentPadding="5dp"
                                 app:cardPreventCornerOverlap="false"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="16dp"
-                                app:cardCornerRadius="32dp">
+                                app:cardCornerRadius="22dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -550,19 +511,21 @@
                                         android:layout_weight="1"
                                         android:layout_height="match_parent"
                                         android:orientation="vertical"
-                                        android:padding="10dp">
+                                        android:padding="7dp">
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:gravity="center"
+                                            android:textSize="13sp"
                                             android:textColor="@color/black"
                                             android:text="Self Registry" />
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="10dp"
+                                            android:layout_marginTop="4dp"
                                             android:layout_gravity="center"
                                             android:gravity="center"
+                                            android:textStyle="bold"
                                             android:textColor="#000"
                                             android:id="@+id/Self_Registry" />
                                     </LinearLayout>
@@ -573,7 +536,7 @@
                                 android:layout_height="140dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_margin="16dp"
-                                android:layout_marginBottom="5dp"
+                                android:layout_marginBottom="0dp"
                                 android:layout_toRightOf="@id/card5"
                                 android:clipChildren="false"
                                 android:clipToPadding="false"
@@ -609,7 +572,7 @@
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="10dp"
+                                            android:layout_marginTop="3dp"
                                             android:id="@+id/Team_Registry"
                                             android:textColor="#000"
                                             android:textStyle="bold"

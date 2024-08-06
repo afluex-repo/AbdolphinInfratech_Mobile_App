@@ -36,6 +36,10 @@ public class ResPrintVisitorList {
         this.visitorlst = visitorlst;
     }
 
+    public ResPrintVisitorList() {
+
+    }
+
     public String getStatus() {
         return status;
     }

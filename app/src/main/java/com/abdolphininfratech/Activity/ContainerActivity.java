@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +17,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.abdolphininfratech.Fragment.AdvancePaymentListFragment;
 import com.abdolphininfratech.Fragment.AssociateBusinessFragment;
 import com.abdolphininfratech.Fragment.AssociateTree;
@@ -48,6 +46,7 @@ import com.google.android.material.navigation.NavigationView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 
 
 public class ContainerActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -138,13 +137,6 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
                     if (!(currentFragment instanceof Dashboard))
                         ReplaceFragment(new Dashboard(), " Business Dashboard");
                     drawerLayout.closeDrawers();
-
-//                    if (isSubMenuVisible) {
-//                        hideSubMenu();
-//                    } else {
-//                        showSubMenu();
-//                    }
-//                    isSubMenuVisible = !isSubMenuVisible;
                     break;
                 case R.id.submenu_item_1:
                     if (!(currentFragment instanceof ViewProfile)) {
@@ -240,7 +232,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
 
                 case R.id.tv_visitor_report:
                     if (!(currentFragment instanceof VisistorListFragment))
-                        ReplaceFragment(new VisistorListFragment(), "Visistor List");
+                        ReplaceFragment(new VisistorListFragment(), "Visitor List");
                     drawerLayout.closeDrawers();
                     break;
 
@@ -301,7 +293,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
                     break;
                 case R.id.subuser_reword:
                     if (!(currentFragment instanceof UserReword))
-                       ReplaceFragment(new UserReword(), "User Reword");
+                       ReplaceFragment(new UserReword(), "User Reward");
                     drawerLayout.closeDrawers();
                     break;
                 case R.id.tv_enquiry:
@@ -369,6 +361,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         if (subItem1 != null) subItem1.setVisibility(View.VISIBLE);
         if (subItem2 != null) subItem2.setVisibility(View.VISIBLE);
     }
+
 
     private void showSubMenu1() {
         View subItem2 = findViewById(R.id.TreeLayout);

@@ -1,5 +1,6 @@
 package com.abdolphininfratech.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -70,7 +71,11 @@ public class ForgotPassword extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        finishAffinity();
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+
+      //  finishAffinity();
+
     }
 
     private boolean validate() {

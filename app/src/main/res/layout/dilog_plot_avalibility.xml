@@ -15,7 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/box_bg"
+        android:background="@drawable/dialog_bg"
         android:hint="Select Site Type"
         android:drawableEnd="@drawable/ic_arrow_down_sign_to_navigate"
 
@@ -36,7 +36,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/box_bg"
+        android:background="@drawable/dialog_bg"
         android:drawablePadding="8dp"
         android:padding="8dp"
         android:drawableEnd="@drawable/ic_arrow_down_sign_to_navigate"
@@ -55,7 +55,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/box_bg"
+        android:background="@drawable/dialog_bg"
         android:padding="8dp"
         android:drawableEnd="@drawable/ic_arrow_down_sign_to_navigate"
 
@@ -74,7 +74,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/box_bg"
+        android:background="@drawable/dialog_bg"
         android:drawablePadding="8dp"
         android:padding="8dp"
         android:drawableEnd="@drawable/ic_arrow_down_sign_to_navigate"
@@ -96,8 +96,7 @@
         android:layout_marginTop="8dp"
         android:textSize="14sp"
         android:padding="8dp"
-
-        android:background="@drawable/box_bg"
+        android:background="@drawable/dialog_bg"
         android:hint="Plot Number"
         android:id="@+id/et_plot_number"/>
 

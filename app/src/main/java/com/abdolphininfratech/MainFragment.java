@@ -18,6 +18,7 @@ import com.abdolphininfratech.Fragment.ViewProfile;
 import com.abdolphininfratech.databinding.FragmentMainBinding;
 
 
+
 public class MainFragment extends Fragment {
     private static final int REQUEST_CALL_PERMISSION = 1;
     private FragmentMainBinding binding;
@@ -43,6 +44,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 replaceFragment(new ViewProfile());
+
             }
         });
 

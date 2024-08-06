@@ -1,13 +1,18 @@
 package com.abdolphininfratech.Activity;
 import static android.content.ContentValues.TAG;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import com.abdolphininfratech.Adapter.BusinessDevelopemntAdapter;
+import com.abdolphininfratech.Fragment.DownbusinessReportFragment;
 import com.abdolphininfratech.Model.GetDownLineBusinessById.LstViewBussiness;
 import com.abdolphininfratech.Model.GetDownLineBusinessById.ResGetDownLineBusinessById;
+import com.abdolphininfratech.R;
 import com.abdolphininfratech.common.LoggerUtil;
 import com.abdolphininfratech.constants.BaseActivity;
 import com.abdolphininfratech.databinding.ActivityPrintDownBusinessBinding;
@@ -43,6 +48,12 @@ ActivityPrintDownBusinessBinding binding;
     }
 
     private void onclicklistener() {
+        binding.backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showFragment(new DownbusinessReportFragment());
+            }
+        });
 
     }
 
@@ -87,11 +98,20 @@ ActivityPrintDownBusinessBinding binding;
                     Log.e(TAG, "Response Error: " + response.message());
                 }
             }
-
             @Override
             public void onFailure(Call<ResGetDownLineBusinessById> call, Throwable t) {
                 Log.e(TAG, "Network Failure: " + t.getMessage());
             }
         });
     }
+
+
+    private void showFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
 }

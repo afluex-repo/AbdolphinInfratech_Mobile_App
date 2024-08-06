@@ -1,5 +1,6 @@
 package com.abdolphininfratech.Fragment;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +10,13 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.abdolphininfratech.Activity.ContainerActivity;
 import com.abdolphininfratech.Adapter.SliderAdapter;
 import com.abdolphininfratech.Model.responseDashboard.ResponseDashboard;
 import com.abdolphininfratech.Model.responseNews.Lstnewsdetail;
@@ -93,14 +98,31 @@ public class Dashboard extends BaseFragment {
             Color.GREEN
     };
 
+    private final OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+        @Override
+        public void handleOnBackPressed() {
+            if (getParentFragmentManager().getBackStackEntryCount() > 0) {
+                getParentFragmentManager().popBackStack();
+            } else {
+                Intent intent = new Intent(getActivity(), ContainerActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        }
+    };
+
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dashboard, container, false);
         unbinder = ButterKnife.bind(this, view);
-        lstnewsdetails=new ArrayList<>();
 
+        // Register the back pressed callback
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), onBackPressedCallback);
+
+        lstnewsdetails=new ArrayList<>();
 
         if (NetworkUtils.getConnectivityStatus(context) != 0) {
             getData();
@@ -312,4 +334,7 @@ public class Dashboard extends BaseFragment {
             }
         });
     }
+
+
+
 }

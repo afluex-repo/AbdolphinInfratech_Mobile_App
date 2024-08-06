@@ -13,9 +13,11 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -46,7 +48,7 @@ import static com.abdolphininfratech.app.AppConfig.PAYLOAD_BUNDLE;
 public class BaseActivity extends AppCompatActivity implements NetworkConnectionChecker.OnConnectivityChangedListener, View.OnClickListener, MvpView {
 
     private ProgressDialog mProgressDialog;
-    private static final String TAG = "BaseActivity";
+    protected static final String TAG = "BaseActivity";
     protected static final int PHONE_STATE_PERMISSION_REQUEST_CODE = 12;
     public Activity context;
     public ApiServices apiServices, createServiceUtilityV2;
@@ -359,25 +361,39 @@ public class BaseActivity extends AppCompatActivity implements NetworkConnection
         builder1.setTitle("Logout");
         builder1.setMessage("Do you really want to logout?");
         builder1.setCancelable(true);
-        builder1.setPositiveButton(
-                "Yes",
-                (dialog, id) -> {
-                    if (NetworkUtils.getConnectivityStatus(context) != 0) {
-                        PreferencesManager.getInstance(context).clear();
-                        PreferencesManager.getInstance(context).setIsFirstTimeLaunch(false);
-                        goToActivityWithFinish(context, activity, null);
-                    } else
-                        showMessage(R.string.alert_internet);
-                    dialog.cancel();
-                });
 
-        builder1.setNegativeButton("No", (dialog, id) -> dialog.cancel());
+        LayoutInflater inflater = context.getLayoutInflater();
+        View customButtonPanel = inflater.inflate(R.layout.dialog_buttons_layout, null);
+        builder1.setView(customButtonPanel);
 
         AlertDialog alert11 = builder1.create();
+
         alert11.setOnShowListener(arg0 -> {
-            alert11.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.red));
-            alert11.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+            Button positiveButton = customButtonPanel.findViewById(R.id.button_positive);
+            Button negativeButton = customButtonPanel.findViewById(R.id.button_negative);
+
+            positiveButton.setOnClickListener(v -> {
+                if (NetworkUtils.getConnectivityStatus(context) != 0) {
+                    PreferencesManager.getInstance(context).clear();
+                    PreferencesManager.getInstance(context).setIsFirstTimeLaunch(false);
+                    goToActivityWithFinish(context, activity, null);
+                } else {
+                    showMessage(R.string.alert_internet);
+                }
+                alert11.dismiss();
+            });
+
+            negativeButton.setOnClickListener(v -> alert11.dismiss());
+
+            positiveButton.setTextColor(context.getResources().getColor(R.color.white));
+            negativeButton.setTextColor(context.getResources().getColor(R.color.white));
         });
+
         alert11.show();
     }
+
+
+
+
+
 }

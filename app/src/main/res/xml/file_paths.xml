@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Path to access files in the Pictures directory of external storage -->
     <external-files-path name="my_images" path="Pictures/" />
+
+    <!-- Path to access any file in external storage directory -->
+    <external-path name="external_files" path="." />
+
+    <external-files-path name="my_pdfs" path="PDFs/"/>
 </paths>

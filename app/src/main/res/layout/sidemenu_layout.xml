@@ -420,6 +420,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
         </LinearLayout>
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -793,7 +794,7 @@
             android:layout_gravity="center_vertical"
             android:drawableEnd="@drawable/ic_next"
             android:padding="4dp"
-            android:text="Reword"
+            android:text="Reward"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -820,7 +821,7 @@
             android:layout_marginStart="12dp"
             android:layout_gravity="center_vertical"
             android:padding="4dp"
-            android:text="User Reword"
+            android:text="User Reward"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold"

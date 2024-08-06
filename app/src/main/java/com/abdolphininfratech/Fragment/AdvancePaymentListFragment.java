@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
 import static android.content.ContentValues.TAG;
 
 import android.os.Bundle;
@@ -29,6 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class AdvancePaymentListFragment extends BaseFragment {
     private FragmentAdvancePaymentListBinding binding;
