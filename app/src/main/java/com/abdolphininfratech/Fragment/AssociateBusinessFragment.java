@@ -1,9 +1,7 @@
 package com.abdolphininfratech.Fragment;
 import static android.content.ContentValues.TAG;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,11 +11,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.abdolphininfratech.Adapter.BusinessReportAdapter;
 import com.abdolphininfratech.Model.BusinessReport.LstBusinessReport;
 import com.abdolphininfratech.Model.BusinessReport.ResBusinessReport;
-import com.abdolphininfratech.Model.VisitorList.ResVisitorList;
 import com.abdolphininfratech.R;
 import com.abdolphininfratech.app.PreferencesManager;
 import com.abdolphininfratech.common.LoggerUtil;

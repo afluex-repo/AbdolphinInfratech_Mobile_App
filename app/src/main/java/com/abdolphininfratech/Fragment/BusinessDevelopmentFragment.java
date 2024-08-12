@@ -37,18 +37,15 @@ public class BusinessDevelopmentFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment using the inflater
         binding = FragmentBusinessDevelopmentBinding.inflate(inflater, container, false);
 
-        // Initialize Retrofit and ApiServices
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://abdolphininfratech.com/") // Ensure this URL ends with a trailing slash
+                .baseUrl("https://abdolphininfratech.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         apiServices = retrofit.create(ApiServices.class);
 
-        // Initialize views and set up click listeners
         initview();
         onclicklistner();
 
@@ -56,7 +53,7 @@ public class BusinessDevelopmentFragment extends BaseFragment {
     }
 
     private void onclicklistner() {
-        // Implement any click listeners here if needed
+
     }
 
     private void initview() {
@@ -65,7 +62,6 @@ public class BusinessDevelopmentFragment extends BaseFragment {
         adapter = new BusinessDevelopemntAdapter(lstViewBussinesses, getContext());
         binding.gerdownRecyclerview.setAdapter(adapter);
 
-        // Retrieve data passed to the fragment
         if (getArguments() != null && getArguments().containsKey("Fk_UserId")) {
             String visitorId = getArguments().getString("Fk_UserId");
             GetBusinessData(visitorId);

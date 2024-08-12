@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.os.Handler;
@@ -63,11 +62,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BookingDetails extends BaseFragment {
-
     @BindView(R.id.btn_search)
     ImageView btnSearch;
     private Unbinder unbinder;
-
     @BindView(R.id.recyclerview1)
     RecyclerView recyclerview1;
     BottomSheetDialog searchDialog;
@@ -187,10 +184,6 @@ public class BookingDetails extends BaseFragment {
         blockMenu = new PopupMenu(context, tvBlock);
         //getPackage();
         getPackage();
-        //  SelectSite = new ArrayList<String>();
-        //  SelectSector = new ArrayList<String>();
-        // SelectBlock = new ArrayList<String>();
-        // SelectSiteType=new ArrayList<String>();
         tvSelectSite.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

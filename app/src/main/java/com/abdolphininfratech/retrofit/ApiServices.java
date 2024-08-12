@@ -17,7 +17,6 @@ import com.abdolphininfratech.Model.Site.ResponseSite;
 import com.abdolphininfratech.Model.SiteType.ResponseSiteType;
 import com.abdolphininfratech.Model.UploadKycList.ReqUploadKycList;
 import com.abdolphininfratech.Model.UploadKycList.ResUploadKycList;
-import com.abdolphininfratech.Model.VisitorList.ReqVisistorList;
 import com.abdolphininfratech.Model.VisitorList.ResVisitorList;
 import com.abdolphininfratech.Model.request.RequestBookingDetails;
 import com.abdolphininfratech.Model.request.RequestPlotAvailability;
@@ -46,6 +45,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+
 
 public interface ApiServices {
 
@@ -121,6 +121,7 @@ public interface ApiServices {
     Call<ResponseEnquriy>getEnquiry(@Body JsonObject login);
     @POST("WebAPI/EnquiryList")
     Call<ResponsEnqueryList>getEnquriyList(@Body JsonObject login);
+
     @Multipart
     @POST("api/ImageUpload/user/PostUserImage")
     Call<JsonObject> uploadProfilePic(@Part("fk_UserId") RequestBody fk_UserId,
@@ -145,11 +146,9 @@ public interface ApiServices {
             @Part MultipartBody.Part panImage,
             @Part MultipartBody.Part documentImage
     );
+
     @POST("WebAPI/GetKYCList")
     Call<ResUploadKycList> getKYCList(@Body ReqUploadKycList requestObject);
-
-//    @POST("WebAPI/VisitorList")
-//    Call<ResVisitorList> getVisitorList(@Body ReqVisistorList requestObject);
 
     @POST("WebAPI/VisitorList")
     Call<ResVisitorList> getVisitorList(@Body JsonObject requestObject);

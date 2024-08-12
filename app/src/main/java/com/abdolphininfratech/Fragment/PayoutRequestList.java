@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,14 +9,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.abdolphininfratech.Adapter.AdapterPayoutLedger;
 import com.abdolphininfratech.Adapter.AdapterPayoutRequestList;
-import com.abdolphininfratech.Model.responsePayoutLedger.ResponsePayoutLedger;
 import com.abdolphininfratech.Model.responsePayoutRequestList.ResponsePayoutRequestList;
 import com.abdolphininfratech.R;
 import com.abdolphininfratech.app.PreferencesManager;
@@ -27,10 +22,7 @@ import com.abdolphininfratech.common.Utils;
 import com.abdolphininfratech.constants.BaseFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.JsonObject;
-import com.google.gson.annotations.SerializedName;
-
 import java.util.Calendar;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -39,8 +31,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PayoutRequestList extends BaseFragment {
 
+public class PayoutRequestList extends BaseFragment {
     @BindView(R.id.tv_from_date)
     EditText tvFromDate;
     @BindView(R.id.tv_to_date)
@@ -48,7 +40,6 @@ public class PayoutRequestList extends BaseFragment {
     @BindView(R.id.btn_search)
     ImageView btnSearch;
     private Unbinder unbinder;
-
     @BindView(R.id.recyclerview1)
     RecyclerView recyclerview1;
     BottomSheetDialog searchDialog;
@@ -93,6 +84,8 @@ public class PayoutRequestList extends BaseFragment {
 
         });
     }
+
+
     public void getDataSearch(String startdate, String endDate, String status) {
         showLoading();
         JsonObject object = new JsonObject();
@@ -158,7 +151,6 @@ public class PayoutRequestList extends BaseFragment {
             else
                 datePicker(tv_end_date);
         });
-
 
         tv_status.setOnClickListener(v -> {
             PopupMenu popup_sidemenu = new PopupMenu(context, tv_status);

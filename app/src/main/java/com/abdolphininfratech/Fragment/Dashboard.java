@@ -119,7 +119,6 @@ public class Dashboard extends BaseFragment {
         View view = inflater.inflate(R.layout.dashboard, container, false);
         unbinder = ButterKnife.bind(this, view);
 
-        // Register the back pressed callback
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), onBackPressedCallback);
 
         lstnewsdetails=new ArrayList<>();
@@ -230,10 +229,8 @@ public class Dashboard extends BaseFragment {
         chart1.setData(data);
         chart1.highlightValues(null);
 
-        // refresh/update pie chart
         chart1.invalidate();
 
-        // animate piechart
         chart1.animateXY(1400, 1400);
 
         Legend l = chart1.getLegend();

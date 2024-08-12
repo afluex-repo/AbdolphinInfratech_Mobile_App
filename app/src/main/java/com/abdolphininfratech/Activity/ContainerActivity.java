@@ -81,7 +81,6 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         View hView = navView.getHeaderView(0);
         drawerMenuItems = new DrawerMenuItems(hView);
 
-       // ReplaceFragment(new Dashboard(), "Dashboard");
         ReplaceFragment(new MainFragment(), "Dashboard");
 
     }
@@ -126,7 +125,6 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
             switch (view.getId()) {
                 case R.id.img_profile:
                     Toast.makeText(context, "Profile", Toast.LENGTH_SHORT).show();
-                    //goToActivity(ContainerActivity.this, Profile.class, null);
                     break;
                 case R.id.maindashboard:
                     if (!(currentFragment instanceof MainFragment))
@@ -154,8 +152,6 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
 
                    //payout request
                 case R.id.tv_payout_request:
-//                    if (!(currentFragment instanceof PayoutRequest))
-//                        ReplaceFragment(new PayoutRequest(), "Payout Request");
                     if (isSubMenuVisible) {
                         hideSubMenu3();
                     } else {
@@ -189,8 +185,6 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
                     drawerLayout.closeDrawers();
                     break;
                 case R.id.tv_plot_availability:
-//                    if (!(currentFragment instanceof PlotAvailability))
-//                        ReplaceFragment(new PlotAvailability(), "Plot Availability");
                     if (isSubMenuVisible) {
                         hideSubMenu4();
                     } else {
@@ -369,11 +363,11 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         if (subItem2 != null) subItem2.setVisibility(View.VISIBLE);
         if (subItem3 != null) subItem3.setVisibility(View.VISIBLE);
     }
+
+
     private void showSubMenu2() {
         View subItem2 = findViewById(R.id.userRewardLayout);
-       // View subItem3 = findViewById(R.id.TreeLayout1);
         if (subItem2 != null) subItem2.setVisibility(View.VISIBLE);
-      //  if (subItem3 != null) subItem3.setVisibility(View.VISIBLE);
     }
     @SuppressLint("SuspiciousIndentation")
     private void showSubMenu3() {

@@ -243,7 +243,6 @@ public class KYCUploadActivity extends BaseActivity {
         });
 
     }
-    /// Camera
 
 
     private void openGallery(int requestCode) {
@@ -271,8 +270,9 @@ public class KYCUploadActivity extends BaseActivity {
         }
     }
 
+
     private File createImageFile() throws IOException {
-        // Create an image file name
+
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -361,6 +361,11 @@ public class KYCUploadActivity extends BaseActivity {
         }
     }
 
+
+
+
+
+
     private File getFileFromUri(Uri uri) {
         String fileName = "image_" + System.currentTimeMillis() + ".jpg";
         File file = new File(getCacheDir(), fileName);
@@ -403,6 +408,7 @@ public class KYCUploadActivity extends BaseActivity {
             }
         }
     }
+
 
     public void permissionCheck() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -496,14 +502,12 @@ public class KYCUploadActivity extends BaseActivity {
 
 
     private void getKycList() {
-        // Create a request object
         ReqUploadKycList requestObject = new ReqUploadKycList();
         try {
-            // Set user ID
             requestObject.setUserID(Integer.parseInt(PreferencesManager.getInstance(this).getUserId()));
         } catch (NumberFormatException e) {
             Log.e("API_ERROR", "Invalid user ID format", e);
-            return; // Exit method if user ID parsing fails
+            return;
         }
         LoggerUtil.logItem(requestObject);
         ApiServices apiServices = RetrofitClient.getClient("https://abdolphininfratech.com/").create(ApiServices.class);

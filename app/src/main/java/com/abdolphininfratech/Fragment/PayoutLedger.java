@@ -1,19 +1,13 @@
 package com.abdolphininfratech.Fragment;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.abdolphininfratech.Adapter.AdapterPayoutLedger;
 import com.abdolphininfratech.Model.responsePayoutLedger.ResponsePayoutLedger;
 import com.abdolphininfratech.R;
@@ -24,21 +18,16 @@ import com.abdolphininfratech.common.Utils;
 import com.abdolphininfratech.constants.BaseFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.JsonObject;
-
-import org.json.JSONObject;
-
 import java.util.Calendar;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PayoutLedger extends BaseFragment {
 
+public class PayoutLedger extends BaseFragment {
 
     private Unbinder unbinder;
 

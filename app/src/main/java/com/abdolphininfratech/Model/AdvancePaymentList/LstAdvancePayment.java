@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Model.AdvancePaymentList;
-
 import com.google.gson.annotations.SerializedName;
 
 public class LstAdvancePayment {

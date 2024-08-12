@@ -1,8 +1,10 @@
 <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <TextView
         android:id="@+id/tvStatus"
         android:layout_width="wrap_content"
@@ -14,12 +16,11 @@
         android:textStyle="bold"/>
 
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="20dp">
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,10 +30,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:textColor="@color/white"
-            android:id="@+id/tv_amount"/>
+            android:textColor="@color/white" />
     </LinearLayout>
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_gravity="center"
@@ -45,7 +46,7 @@
             android:layout_height="wrap_content"
             app:tint="#ffff" />
         <EditText
-            android:id="@+id/et_balance"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Amount"
@@ -53,9 +54,8 @@
             android:layout_marginStart="10dp"
             android:textColor="@color/white"/>
     </LinearLayout>
-
     <Button
-        android:id="@+id/btn_save"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="Save"
@@ -64,4 +64,155 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:background="@drawable/btn_submit"/>
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:background="@drawable/gradient_bg"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_height="120dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:src="@drawable/zz"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:text="Balance Amount"
+                                android:textStyle="bold"
+                                android:layout_marginTop="0dp"
+                                android:textSize="18sp"
+                                android:paddingStart="0dp"
+                                android:textColor="@color/white"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/tv_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="3dp"
+                                android:layout_marginEnd="35dp"
+                                android:backgroundTint="@color/white"
+                                android:background="@drawable/textview_border"
+                                android:paddingStart="0dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:background="@drawable/gradient_bg"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_height="120dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:src="@drawable/qq"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:text="Amount Details"
+                                android:textStyle="bold"
+                                android:layout_marginTop="0dp"
+                                android:textSize="18sp"
+                                android:paddingStart="0dp"
+                                android:textColor="@color/white"
+                                android:layout_height="wrap_content"/>
+                            <EditText
+                                android:id="@+id/et_balance"
+                                android:layout_marginTop="5dp"
+                                android:text="N/A"
+                                android:backgroundTint="@color/white"
+                                android:padding="10dp"
+                                android:background="@drawable/textview_border"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="match_parent"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/gradient_bg"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

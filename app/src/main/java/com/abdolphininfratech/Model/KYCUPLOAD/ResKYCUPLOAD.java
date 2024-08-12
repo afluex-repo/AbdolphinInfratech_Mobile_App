@@ -160,4 +160,7 @@ public class ResKYCUPLOAD {
     public void setBankBranch(String bankBranch) {
         this.bankBranch = bankBranch;
     }
+
+
+
 }

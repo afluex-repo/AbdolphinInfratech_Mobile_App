@@ -122,28 +122,18 @@ public class PrintVisitorListActivity extends BaseActivity {
                     String apiStatus = resVisitorList.getStatus();
                     String apiMessage = resVisitorList.getMessage();
 
-                    // Set data to TextViews
                     binding.text1.setText(resVisitorList.getSiteName());
                     binding.text2.setText(resVisitorList.getLoginId());
                     binding.text3.setText(resVisitorList.getAssociateName());
                     binding.text4.setText(resVisitorList.getAmount());
                     binding.text5.setText(resVisitorList.getVisitDate());
-                   // loginIdTextView.setText(resVisitorList.getLoginId());
+
                     Log.d(TAG, "API Status: " + apiStatus);
                     Log.d(TAG, "API Message: " + apiMessage);
                     lstvisitors.clear();
                     lstvisitors.addAll(resVisitorList.getVisitorlst());
                     adapter.notifyDataSetChanged();
 
-//                    if ("success".equalsIgnoreCase(apiStatus)) {
-//                        if (resVisitorList.getVisitorlst() != null) {
-//                            lstvisitors.clear();
-//                            lstvisitors.addAll(resVisitorList.getVisitorlst());
-//                            adapter.notifyDataSetChanged();
-//                        }
-//                    } else {
-//                        Log.e(TAG, "API Error Message: " + apiMessage);
-//                    }
                 } else {
                     Log.e(TAG, "Response Error: " + response.message());
 
@@ -167,87 +157,6 @@ public class PrintVisitorListActivity extends BaseActivity {
             }
         });
     }
-
-
-
-
-
-
-
-
-//    public void PrintData(String id) {
-//        showLoading();
-//        JsonObject object = new JsonObject();
-//        object.addProperty("PK_VisitorId", Integer.parseInt(id));
-//        LoggerUtil.logItem(object);
-//        Log.d("req data: ", "" + object);
-//
-//        ApiServices apiService = RetrofitClient.getClient("https://abdolphininfratech.com/").create(ApiServices.class);
-//        Call<ResPrintVisitorList> call = apiService.getprintVisitor(object);
-//        call.enqueue(new Callback<ResPrintVisitorList>() {
-//            @Override
-//            public void onResponse(Call<ResPrintVisitorList> call, Response<ResPrintVisitorList> response) {
-//                int statusCode = response.code();
-//                Log.d(TAG, "HTTP Status Code: " + statusCode);
-//
-//                if (response.isSuccessful() && response.body() != null) {
-//                    hideLoading();
-//                    ResPrintVisitorList resVisitorList = response.body();
-//                    LoggerUtil.logItem(resVisitorList);
-//
-//                    binding.text1.setText(resVisitorList.getSiteName());
-//                    binding.text2.setText(resVisitorList.getLoginId());
-//                    binding.text3.setText(resVisitorList.getAssociateName());
-//                    binding.text4.setText(resVisitorList.getAmount());
-//                    binding.text5.setText(resVisitorList.getVisitDate());
-//
-//                    TableLayout tableLayout = binding.tableLayout;
-//                    tableLayout.removeAllViews();
-//
-//                    TableRow headerRow = new TableRow(PrintVisitorListActivity.this);
-//                    addRowWithBorder(headerRow, true); // Apply border for header
-//                    addTextViewToRow(headerRow, "Name", true);
-//                    addTextViewToRow(headerRow, "Mobile", true);
-//                    addTextViewToRow(headerRow, "Address", true);
-//                    tableLayout.addView(headerRow);
-//
-//                    for (Visitorlst visitor : resVisitorList.getVisitorlst()) {
-//                        TableRow row = new TableRow(PrintVisitorListActivity.this);
-//                        addRowWithBorder(row, false);
-//                        addTextViewToRow(row, visitor.getCustomerName(), false);
-//                        addTextViewToRow(row, visitor.getMobile(), false);
-//                        addTextViewToRow(row, visitor.getAddress(), false);
-//                        tableLayout.addView(row);
-//                    }
-//
-//                    // Generate PDF
-////                    createPDF(PrintVisitorListActivity.this, resVisitorList);
-//                } else {
-//                    Log.e(TAG, "Response Error: " + response.message());
-//
-//                    switch (statusCode) {
-//                        case 404:
-//                            Log.e(TAG, "Error: Resource not found.");
-//                            break;
-//                        case 500:
-//                            Log.e(TAG, "Error: Server error.");
-//                            break;
-//                        default:
-//                            Log.e(TAG, "Error: Unexpected status code.");
-//                            break;
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResPrintVisitorList> call, Throwable t) {
-//                Log.e(TAG, "Network Failure: " + t.getMessage());
-//            }
-//        });
-//    }
-
-
-
 
     private void generatePDF() {
         if (lstvisitors != null && !lstvisitors.isEmpty()) {

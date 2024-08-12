@@ -1,6 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,15 +6,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import com.abdolphininfratech.Activity.ContainerActivity;
 import com.abdolphininfratech.Activity.Login;
 import com.abdolphininfratech.R;
 import com.abdolphininfratech.app.PreferencesManager;
-import com.abdolphininfratech.common.NetworkUtils;
 import com.abdolphininfratech.constants.BaseFragment;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,18 +18,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import retrofit2.Call;
-import retrofit2.Callback;
+
 
 public class ChangePassword extends BaseFragment {
 

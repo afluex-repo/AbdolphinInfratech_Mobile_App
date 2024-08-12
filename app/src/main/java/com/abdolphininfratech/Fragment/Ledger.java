@@ -68,8 +68,7 @@ public class Ledger extends BaseFragment {
     private List<Lstsite> lstsites;
     private List<LstSector> lstSectors;
     private List<LstBlock> lstBlocks;
-    //private ArrayList<String> SelectSite, SelectSector, SelectBlock, SelectSiteType;
-   // String PK_SectorID, PK_SiteID, PK_BlockID, PK_SiteType;
+
     private Unbinder unbinder;
 
     @BindView(R.id.recyclerview1)
@@ -178,10 +177,6 @@ public class Ledger extends BaseFragment {
         blockMenu = new PopupMenu(context, tvBlock);
         //getPackage();
         getPackage();
-        //  SelectSite = new ArrayList<String>();
-        //  SelectSector = new ArrayList<String>();
-        // SelectBlock = new ArrayList<String>();
-        // SelectSiteType=new ArrayList<String>();
         tvSelectSite.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -237,9 +232,6 @@ public class Ledger extends BaseFragment {
                     tvSelectSite.setText(lstsites.get(position).getSiteName());
                     selectSiteid=lstsites.get(position).getPKSiteID();
 
-
-                    //  getSector();
-                    //  packageMenu = lstPackages.get(position).getProductName();
                     return true;
                 });
                 sitepopupmenu.show();
@@ -256,8 +248,6 @@ public class Ledger extends BaseFragment {
                     int position = item.getOrder();
                     tvSector.setText(lstSectors.get(position).getSectorName());
                     selectSiteid = lstSectors.get(position).getPKSectorID();
-
-                    //  packageMenu = lstPackages.get(position).getProductName();
                     return true;
                 });
                 sectorMenu.show();
@@ -367,9 +357,6 @@ public class Ledger extends BaseFragment {
 
                         sectorMenu.getMenu().add(0, 0, i,lstSectors.get(i).getSectorName());
 
-
-
-                        //showMessage(response.body().getStatus());
                     }
                     //showMessage(response.body().getMessage());
                 }else

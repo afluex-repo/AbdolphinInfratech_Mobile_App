@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,19 +6,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import com.abdolphininfratech.Model.ResponsePayoutRequest;
 import com.abdolphininfratech.Model.ResponseSavePayout;
-import com.abdolphininfratech.Model.responsePayoutLedger.ResponsePayoutLedger;
 import com.abdolphininfratech.R;
 import com.abdolphininfratech.app.PreferencesManager;
 import com.abdolphininfratech.common.LoggerUtil;
 import com.abdolphininfratech.common.NetworkUtils;
 import com.abdolphininfratech.constants.BaseFragment;
 import com.google.gson.JsonObject;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
