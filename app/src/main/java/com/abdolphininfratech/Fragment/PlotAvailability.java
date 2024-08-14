@@ -172,22 +172,13 @@ public class PlotAvailability extends BaseFragment {
         sectorMenu = new PopupMenu(context, tvSector);
         blockMenu = new PopupMenu(context, tvBlock);
 
-
         getPackage();
         getSiteType();
-     //  getSector();
-      //  getBlock();
         lstsites = new ArrayList<>();
         lstsitetypes = new ArrayList<>();
         lstSectors=new ArrayList<>();
         lstBlocks=new ArrayList<>();
 
-
-
-        //  SelectSite = new ArrayList<String>();
-      //  SelectSector = new ArrayList<String>();
-       // SelectBlock = new ArrayList<String>();
-       // SelectSiteType=new ArrayList<String>();
         tvSelectSite.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

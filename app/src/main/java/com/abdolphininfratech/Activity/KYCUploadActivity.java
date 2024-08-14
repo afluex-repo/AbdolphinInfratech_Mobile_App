@@ -394,9 +394,6 @@ public class KYCUploadActivity extends BaseActivity {
     }
 
 
-
-
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -539,11 +536,13 @@ public class KYCUploadActivity extends BaseActivity {
                         } else {
                             showAllEditingElements();
                         }
+
                         loadImage(binding.adharFront, lstKycDocument.getAdharImage());
                         loadImage(binding.panImage, lstKycDocument.getPanImage());
                         loadImage(binding.DocImage, lstKycDocument.getDocumentImage());
                         loadImage(binding.adharback, lstKycDocument.getAdharBacksideImage());
                     }
+
                 } else {
                     Log.e("API_ERROR", "Response unsuccessful or empty body");
                 }

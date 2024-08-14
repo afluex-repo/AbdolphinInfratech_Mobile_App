@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Fragment;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.abdolphininfratech.Adapter.AdapterPayoutDetails;
 import com.abdolphininfratech.Model.responsePayoutDetails.ResponsePayoutDetails;
 import com.abdolphininfratech.R;
@@ -24,9 +21,7 @@ import com.abdolphininfratech.common.Utils;
 import com.abdolphininfratech.constants.BaseFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.JsonObject;
-
 import java.util.Calendar;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -34,6 +29,8 @@ import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+
 
 public class PayoutDetails extends BaseFragment {
 
