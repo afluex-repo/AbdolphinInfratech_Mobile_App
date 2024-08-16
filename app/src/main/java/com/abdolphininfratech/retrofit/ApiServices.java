@@ -145,6 +145,7 @@ public interface ApiServices {
             @Part MultipartBody.Part adharBacksideImage,
             @Part MultipartBody.Part panImage,
             @Part MultipartBody.Part documentImage
+
     );
 
     @POST("WebAPI/GetKYCList")
@@ -158,7 +159,6 @@ public interface ApiServices {
 
     @POST("WebAPI/AdvancePaymentList")
     Call<ResAdvancePaymentList> getAdavncePaymentList(@Body JsonObject requestObject);
-
 
     @POST("WebAPI/BusinessReport")
     Call<ResBusinessReport> getBusinessReport(@Body JsonObject requestObject);

@@ -10,12 +10,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.abdolphininfratech.Activity.ContainerActivity;
 import com.abdolphininfratech.Adapter.SliderAdapter;
 import com.abdolphininfratech.Model.responseDashboard.ResponseDashboard;
@@ -110,7 +108,6 @@ public class Dashboard extends BaseFragment {
             }
         }
     };
-
 
 
     @Nullable
