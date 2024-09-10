@@ -363,9 +363,6 @@ public class KYCUploadActivity extends BaseActivity {
 
 
 
-
-
-
     private File getFileFromUri(Uri uri) {
         String fileName = "image_" + System.currentTimeMillis() + ".jpg";
         File file = new File(getCacheDir(), fileName);

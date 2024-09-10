@@ -58,8 +58,13 @@ public class PrintVisitorListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityPrintVisitorListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+      //  apiServices = RetrofitClient.getInstance().create(ApiServices.class); // Initialize apiServices
+
+
         initview();
         onclicklisner();
+
 
         binding.txtHeading.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +106,8 @@ public class PrintVisitorListActivity extends BaseActivity {
         }
     }
 
-    public void PrintData(String id ) {
+
+    public void PrintData(String id) {
         showLoading();
         JsonObject object = new JsonObject();
         object.addProperty("PK_VisitorId",Integer.parseInt(id));

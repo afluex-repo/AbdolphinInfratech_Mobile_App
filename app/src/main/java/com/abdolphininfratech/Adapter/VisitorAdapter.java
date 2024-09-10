@@ -1,5 +1,4 @@
 package com.abdolphininfratech.Adapter;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,6 +15,7 @@ import com.abdolphininfratech.Model.VisitorList.Lstvisitor;
 import com.abdolphininfratech.R;
 
 import java.util.List;
+
 
 public class VisitorAdapter extends RecyclerView.Adapter<VisitorAdapter.ViewHolder> {
     private List<Lstvisitor> mList;
@@ -44,6 +44,7 @@ public class VisitorAdapter extends RecyclerView.Adapter<VisitorAdapter.ViewHold
         holder.visitDate.setText(lstvisitor.getVisitDate());
         holder.Amount.setText(lstvisitor.getAmount());
 
+
         holder.print.setOnClickListener(v -> {
             Intent intent = new Intent(context, PrintVisitorListActivity.class);
             intent.putExtra("PK_VisitorId", lstvisitor.getpK_VisitorID());
@@ -63,6 +64,7 @@ public class VisitorAdapter extends RecyclerView.Adapter<VisitorAdapter.ViewHold
         public TextView amount;
         public TextView visitDate;
         public AppCompatButton print;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

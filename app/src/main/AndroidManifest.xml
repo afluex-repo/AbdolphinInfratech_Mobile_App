@@ -66,6 +66,7 @@
             </intent-filter>
         </activity>
 
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.abdolphininfratech.fileprovider"
