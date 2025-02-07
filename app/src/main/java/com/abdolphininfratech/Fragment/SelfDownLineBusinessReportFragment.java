@@ -21,7 +21,7 @@ import com.abdolphininfratech.common.Utils;
 import com.abdolphininfratech.constants.BaseFragment;
 import com.abdolphininfratech.databinding.FragmentSelfDownLineBusinessReportBinding;
 import com.abdolphininfratech.retrofit.ApiServices;
-import com.abdolphininfratech.retrofit.RetrofitClient;
+import com.abdolphininfratech.retrofit.RetrofitClient1;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
@@ -38,12 +38,13 @@ public class SelfDownLineBusinessReportFragment extends BaseFragment {
     private List<LstSelfDownlineBusiness> lstSelfDownlineBusinesses;
     BottomSheetDialog searchDialog;
     private ApiServices apiServices;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        binding=FragmentSelfDownLineBusinessReportBinding.inflate(getLayoutInflater());
-        apiServices = RetrofitClient.getClient("https://abdolphininfratech.com/").create(ApiServices.class);
-       initview();
+        apiServices = RetrofitClient1.getClient("https://abdolphininfratech.com/");
+        initview();
        onclicklistener();
         return binding.getRoot();
 
@@ -111,9 +112,6 @@ public class SelfDownLineBusinessReportFragment extends BaseFragment {
         object.addProperty("BookingNumber", BookingNumber);
         object.addProperty("Mobile", Mobile);
         object.addProperty("Downline",downline );
-
-
-
         LoggerUtil.logItem(object);
         Log.d("req data",""+object);
 
@@ -133,7 +131,6 @@ public class SelfDownLineBusinessReportFragment extends BaseFragment {
                     Log.e(TAG, "Response Error: " + response.message());
                 }
             }
-
             @Override
             public void onFailure(Call<ResSelfDownlineBusinessReport> call, Throwable t) {
                 hideLoading();
@@ -157,7 +154,6 @@ public class SelfDownLineBusinessReportFragment extends BaseFragment {
         Button btn_cancel = sheetView.findViewById(R.id.btn_cancel);
         Button btn_search = sheetView.findViewById(R.id.btn_search);
         btn_cancel.setOnClickListener(v -> searchDialog.dismiss());
-
         tv_start_date.setOnClickListener(v -> {
             datePicker(tv_start_date);
             tv_end_date.setText("");
@@ -186,15 +182,15 @@ public class SelfDownLineBusinessReportFragment extends BaseFragment {
     private void datePicker(final TextView et) {
         Calendar cal = Calendar.getInstance();
         int mYear, mMonth, mDay;
-
         mYear = cal.get(Calendar.YEAR);
         mMonth = cal.get(Calendar.MONTH);
         mDay = cal.get(Calendar.DAY_OF_MONTH);
-
         DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), (view, year, monthOfYear, dayOfMonth) -> {
             et.setText(Utils.changeDateFormat(dayOfMonth, monthOfYear, year));
         }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
         datePickerDialog.show();
     }
+
+
 }

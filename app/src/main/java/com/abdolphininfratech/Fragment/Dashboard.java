@@ -13,8 +13,12 @@ import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import com.abdolphininfratech.Activity.ContainerActivity;
+import com.abdolphininfratech.Activity.UserRewardActivity;
 import com.abdolphininfratech.Adapter.SliderAdapter;
 import com.abdolphininfratech.Model.responseDashboard.ResponseDashboard;
 import com.abdolphininfratech.Model.responseNews.Lstnewsdetail;
@@ -53,6 +57,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
+
 public class Dashboard extends BaseFragment {
     Unbinder unbinder;
     @BindView(R.id.Total_Associates)
@@ -85,6 +90,14 @@ public class Dashboard extends BaseFragment {
     PieChart chart1;
     @BindView(R.id.slider)
     SliderView sliderView;
+    @BindView(R.id.userReward)
+    CardView userReward;
+    @BindView(R.id.TDSAmount)
+    TextView TDSAmount;
+    @BindView(R.id.userreward)
+    TextView userreward;
+
+
     private int[] yValues =new int[4];
     private String[] xValues = new String[4];
     ArrayList<Lstnewsdetail> lstnewsdetails;
@@ -143,6 +156,13 @@ public class Dashboard extends BaseFragment {
 
             }
         });
+        userReward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               loadFragment(new UserReword());
+            }
+        });
+
         return view;
 
     }
@@ -160,7 +180,6 @@ public class Dashboard extends BaseFragment {
         JsonObject object = new JsonObject();
         object.addProperty("AssociateID", PreferencesManager.getInstance(context).getUserId());
         LoggerUtil.logItem(object);
-
         Call<ResponseDashboard> call = apiServices.getDashboard(object);
         call.enqueue(new Callback<ResponseDashboard>() {
             @Override
@@ -179,6 +198,8 @@ public class Dashboard extends BaseFragment {
                         TotalRegistry.setText(response.body().getLstassociate().get(0).getTotalregistry());
                         SelfRegistry.setText(response.body().getLstassociate().get(0).getSelfRegistry());
                         TeamRegistry.setText(response.body().getLstassociate().get(0).getTeamRegistry());
+                        TDSAmount.setText(response.body().getLstassociate().get(0).getTotalTDS());
+                        userreward.setText(response.body().getLstassociate().get(0).getUserRewards());
                         txt_heading.setText("Hello!! "+response.body().getName());
 
                     } else showMessage(response.body().getErrorMessage());
@@ -302,6 +323,7 @@ public class Dashboard extends BaseFragment {
         requestQueue.add(stringRequest);
     }
 
+
     private void getNews() {
         JsonObject object = new JsonObject();
         object.addProperty("AssociateID", PreferencesManager.getInstance(context).getUserId());
@@ -330,5 +352,9 @@ public class Dashboard extends BaseFragment {
     }
 
 
-
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame, fragment);
+        transaction.commit();
+    }
 }

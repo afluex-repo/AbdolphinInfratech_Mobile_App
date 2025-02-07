@@ -32,6 +32,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
+
 public class VisistorListFragment extends BaseFragment {
     FragmentVisistorListBinding binding;
     private VisitorAdapter adapter;
@@ -43,7 +44,7 @@ public class VisistorListFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentVisistorListBinding.inflate(inflater, container, false);
-        apiServices = RetrofitClient.getClient("https://abdolphininfratech.com/").create(ApiServices.class); // Initialize ApiServices
+        apiServices = RetrofitClient.getClient("https://abdolphininfratech.com/").create(ApiServices.class);
         initview();
         onclicklistener();
         return binding.getRoot();
@@ -66,10 +67,8 @@ public class VisistorListFragment extends BaseFragment {
     public void getData() {
         showLoading();
         JsonObject object = new JsonObject();
-        object.addProperty("LoginId", PreferencesManager.getInstance(getContext()).getLoginId());//
-
+        object.addProperty("LoginId", PreferencesManager.getInstance(getContext()).getLoginId());
         LoggerUtil.logItem(object);
-
         Call<ResVisitorList> call = apiServices.getVisitorList(object);
         call.enqueue(new Callback<ResVisitorList>() {
             @Override
@@ -105,8 +104,7 @@ public class VisistorListFragment extends BaseFragment {
         object.addProperty("ToDate", endDate);
         object.addProperty("Downline", downline);
         LoggerUtil.logItem(object);
-Log.d("req data",""+object);
-
+        Log.d("req data",""+object);
         Call<ResVisitorList> call = apiServices.getVisitorList(object);
         call.enqueue(new Callback<ResVisitorList>() {
             @Override
@@ -131,6 +129,7 @@ Log.d("req data",""+object);
             }
         });
     }
+
 
     private void searchhDialog() {
         searchDialog = new BottomSheetDialog(getContext());

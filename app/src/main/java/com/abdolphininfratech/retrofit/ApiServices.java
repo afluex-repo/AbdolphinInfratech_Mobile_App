@@ -1,5 +1,6 @@
 package com.abdolphininfratech.retrofit;
 import com.abdolphininfratech.Model.AdvancePaymentList.ResAdvancePaymentList;
+import com.abdolphininfratech.Model.AssociateDownline.ResponseAssociateDownline;
 import com.abdolphininfratech.Model.Block.ResponseBlock;
 import com.abdolphininfratech.Model.BusinessReport.ResBusinessReport;
 import com.abdolphininfratech.Model.DownlineBusinessReport.ResDownlineBusinessReport;
@@ -171,6 +172,10 @@ public interface ApiServices {
 
     @POST("WebAPI/GetSelfDownlineBusinessReport")
     Call<ResSelfDownlineBusinessReport> getselfdownlinebusiness(@Body JsonObject requestObject);
+
+
+    @POST("WebAPI/GetDownLineReports")
+    Call<ResponseAssociateDownline> getAssociatedownline(@Body JsonObject requestObject);
 
 
 }

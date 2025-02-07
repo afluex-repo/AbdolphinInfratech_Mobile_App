@@ -688,6 +688,35 @@
             </LinearLayout>
             <LinearLayout
                 android:visibility="gone"
+                android:id="@+id/associatedownlinelineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="82dp"
+                android:layout_marginEnd="32dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/summaryreport"/>
+                <TextView
+                    android:id="@+id/associatedownline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="4dp"
+                    android:text="Associate Downline Business Report"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/downbusinessLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

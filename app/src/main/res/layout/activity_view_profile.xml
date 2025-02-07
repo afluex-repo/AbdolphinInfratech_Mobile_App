@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Activity.ViewProfileActivity">
 
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -104,6 +105,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
                             android:backgroundTint="#f3f3f3"
+                            android:text="********"
                             android:layout_marginTop="5dp"
                             android:background="@drawable/textview_border"
                             android:textColor="@color/black"

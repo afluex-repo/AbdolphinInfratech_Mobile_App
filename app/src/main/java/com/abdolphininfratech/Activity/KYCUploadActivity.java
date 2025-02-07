@@ -19,7 +19,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-import com.abdolphininfratech.BuildConfig;
 import com.abdolphininfratech.Model.KYCUPLOAD.ResKYCUPLOAD;
 import com.abdolphininfratech.Model.UploadKycList.LstKycdocument;
 import com.abdolphininfratech.Model.UploadKycList.ReqUploadKycList;
@@ -50,6 +49,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
+
 public class KYCUploadActivity extends BaseActivity {
     ActivityKycuploadBinding binding;
     private static final int PICK_IMAGE1 = 1;
@@ -73,7 +73,9 @@ public class KYCUploadActivity extends BaseActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_PICK_IMAGE = 2;
     private Uri photoURI;
+    private Object BuildConfig;
 
+     private static final String BASE_URL="https://abdolphininfratech.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -250,6 +252,7 @@ public class KYCUploadActivity extends BaseActivity {
         startActivityForResult(galleryIntent, requestCode);
     }
 
+
     private void openCamera(int requestCode) {
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (cameraIntent.resolveActivity(getPackageManager()) != null) {
@@ -322,7 +325,6 @@ public class KYCUploadActivity extends BaseActivity {
     }
 
 
-
     private void loadImageWithPicasso(Uri uri, ImageView imageView) {
         Picasso.get()
                 .load(uri)
@@ -360,7 +362,6 @@ public class KYCUploadActivity extends BaseActivity {
                 break;
         }
     }
-
 
 
     private File getFileFromUri(Uri uri) {
@@ -592,7 +593,7 @@ public class KYCUploadActivity extends BaseActivity {
     private void loadImage(ImageView imageView, String imagePath) {
         if (imagePath != null && !imagePath.isEmpty()) {
             Picasso.get()
-                    .load(BuildConfig.BASE_URL + imagePath.substring(1))
+                    .load(BASE_URL + imagePath.substring(1))
                     .placeholder(R.drawable.box_bg)
                     .into(imageView);
         }

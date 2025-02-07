@@ -24,6 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
+
 public class ViewProfileActivity extends BaseActivity {
     Unbinder unbinder;
     @BindView(R.id.img)
@@ -65,6 +66,7 @@ public class ViewProfileActivity extends BaseActivity {
     @BindView(R.id.btn_update)
     Button btnUpdate;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +92,6 @@ public class ViewProfileActivity extends BaseActivity {
         JsonObject object = new JsonObject();
         object.addProperty("UserID", PreferencesManager.getInstance(context).getUserId());
         LoggerUtil.logItem(object);
-
         Call<ResponseViewProfile> call = apiServices.getViewProfile(object);
         call.enqueue(new Callback<ResponseViewProfile>() {
             @Override
@@ -98,7 +99,7 @@ public class ViewProfileActivity extends BaseActivity {
                 hideLoading();
                 LoggerUtil.logItem(response.body());
                 tvBranch.setText(response.body().getBranchName());
-                tvSponsorId.setText(response.body().getSponsorID());
+               // tvSponsorId.setText(response.body().getSponsorID());
                 tvDesignation.setText(response.body().getDesignationName());
                 tvFirestName.setText(response.body().getFirstName());
                 tvContact.setText(response.body().getContact());
@@ -114,8 +115,15 @@ public class ViewProfileActivity extends BaseActivity {
                 tvAddress.setText(response.body().getAddress());
                 tvAdharno.setText(response.body().getAdharNumber());
 
-            }
+                String sponsorId = response.body().getSponsorID();
+                if (sponsorId != null && !sponsorId.isEmpty()) {
+                    String maskedSponsorId = new String(new char[sponsorId.length()]).replace("\0", "********");
+                    tvSponsorId.setText(maskedSponsorId);
+                } else {
+                    tvSponsorId.setText("No Sponsor ID available");
+                }
 
+            }
             @Override
             public void onFailure(Call<ResponseViewProfile> call, Throwable t) {
                 hideLoading();
@@ -142,6 +150,7 @@ public class ViewProfileActivity extends BaseActivity {
             transaction.commitAllowingStateLoss();
         }, 200);
     }
+
     @Override
     public void onBackPressed() {
         FragmentManager fm = getSupportFragmentManager();

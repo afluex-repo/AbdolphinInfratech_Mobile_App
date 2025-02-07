@@ -5,15 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.abdolphininfratech.Activity.PrintVisitorListActivity;
 import com.abdolphininfratech.Model.VisitorList.Lstvisitor;
 import com.abdolphininfratech.R;
-
 import java.util.List;
 
 
@@ -50,6 +47,7 @@ public class VisitorAdapter extends RecyclerView.Adapter<VisitorAdapter.ViewHold
             intent.putExtra("PK_VisitorId", lstvisitor.getpK_VisitorID());
             context.startActivity(intent);
         });
+
     }
 
     @Override

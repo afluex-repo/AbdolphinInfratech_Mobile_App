@@ -21,9 +21,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class EditProfile extends BaseActivity {
-
-
     @BindView(R.id.img_back)
     ImageView imgBack;
     @BindView(R.id.tv_title)
@@ -69,6 +68,7 @@ public class EditProfile extends BaseActivity {
     @BindView(R.id.btn_update)
     Button btnUpdate;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,24 +76,21 @@ public class EditProfile extends BaseActivity {
         ButterKnife.bind(this);
         tvTitle.setText("Edit Profile");
         getData();
+
     }
-
-
 
     private void getData() {
         showLoading();
         hideKeyboard();
         JsonObject object = new JsonObject();
-
         LoggerUtil.logItem(object);
-
         Call<ResponseViewProfile> call = apiServices.getViewProfile(object);
         call.enqueue(new Callback<ResponseViewProfile>() {
             @Override
             public void onResponse(Call<ResponseViewProfile> call, Response<ResponseViewProfile> response) {
                 hideLoading();
                 tvBranch.setText(response.body().getBranchName());
-                tvSponsorId.setText(response.body().getSponsorID());
+                //tvSponsorId.setText(response.body().getSponsorID());
                 tvDesignation.setText(response.body().getDesignationName());
                 tvFirestName.setText(response.body().getFirstName());
                 tvContact.setText(response.body().getContact());
@@ -108,21 +105,27 @@ public class EditProfile extends BaseActivity {
                 tvIfsc.setText(response.body().getIFSCCode());
                 tvAddress.setText(response.body().getAddress());
                 tvAdharno.setText(response.body().getAdharNumber());
-            }
 
+                String sponsorId = response.body().getSponsorID();
+                if (sponsorId != null && !sponsorId.isEmpty()) {
+                    String maskedSponsorId = new String(new char[sponsorId.length()]).replace("\0", "********");
+                    tvSponsorId.setText(maskedSponsorId);
+                } else {
+                    tvSponsorId.setText("No Sponsor ID available");
+                }
+            }
             @Override
             public void onFailure(Call<ResponseViewProfile> call, Throwable t) {
                 hideLoading();
             }
-
         });
     }
+
+
     private void getUpdateProfile() {
         showLoading();
         RequestUpdateProfile object = new RequestUpdateProfile();
         object.setUserID(PreferencesManager.getInstance(context).getUserId());
-
-
         object.setEmail(tvEmail.getText().toString().trim());
         object.setPanNo(tvPanNo.getText().toString().trim());
         object.setPincode(tvPincode.getText().toString().trim());
@@ -132,30 +135,22 @@ public class EditProfile extends BaseActivity {
         object.setBankName(tvBankName.getText().toString().trim());
         object.setBankBranch(tvBranchName.getText().toString().trim());
         object.setIFSCCode(tvIfsc.getText().toString().trim());
-
-
-
         LoggerUtil.logItem(object);
-
         Call<ResponseUpdateProfile> call = apiServices.getUpdateProfile(object);
         call.enqueue(new Callback<ResponseUpdateProfile>() {
             @Override
             public void onResponse(Call<ResponseUpdateProfile> call, Response<ResponseUpdateProfile> response) {
                 hideLoading();
-
                     showMessage(response.body().getSuccessMessage());
                     onBackPressed();
-
-
             }
-
             @Override
             public void onFailure(Call<ResponseUpdateProfile> call, Throwable t) {
                 hideLoading();
             }
-
         });
     }
+
 
     @OnClick({R.id.img_back, R.id.img, R.id.img_member, R.id.btn_update})
     public void onClick(View view) {
@@ -172,4 +167,5 @@ public class EditProfile extends BaseActivity {
                 break;
         }
     }
+
 }

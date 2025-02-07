@@ -1,7 +1,6 @@
 package com.abdolphininfratech.Fragment;
 import static android.content.ContentValues.TAG;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,6 +24,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
+
 public class DownbusinessReportFragment extends BaseFragment {
     FragmentDownbusinessReportBinding binding;
     private DownBusinessAdapter adapter;
@@ -34,13 +34,13 @@ public class DownbusinessReportFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding=FragmentDownbusinessReportBinding.inflate(getLayoutInflater());
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://abdolphininfratech.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         apiServices = retrofit.create(ApiServices.class);
-
         initview();
         onclicklistener();
         return binding.getRoot();
@@ -86,6 +86,11 @@ public class DownbusinessReportFragment extends BaseFragment {
             public void onFailure(Call<ResDownlineBusinessReport> call, Throwable t) {
                 Log.e(TAG, "Network Failure: " + t.getMessage());
             }
+
         });
+
     }
+
+
+
 }

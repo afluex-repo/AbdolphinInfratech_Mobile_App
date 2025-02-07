@@ -74,20 +74,14 @@ public class SelfDownlineBusinessaDAPTER extends RecyclerView.Adapter<SelfDownli
             CustomerName = itemView.findViewById(R.id.CustomerName);
             AssociateID = itemView.findViewById(R.id.AssociateID);
             AssociateName = itemView.findViewById(R.id.AssociateName);
-
             branchName = itemView.findViewById(R.id.branchName);
             PaidAmount = itemView.findViewById(R.id.PaidAmount);
             PaymentDate = itemView.findViewById(R.id.PaymentDate);
             PlotAmount = itemView.findViewById(R.id.PlotAmount);
             PlotNumber = itemView.findViewById(R.id.PlotNumber);
             Balance = itemView.findViewById(R.id.Balance);
-
             Discount = itemView.findViewById(R.id.Discount);
             BookingNumber = itemView.findViewById(R.id.BookingNumber);
-
-
-
-
             print = itemView.findViewById(R.id.print);
         }
     }

@@ -33,6 +33,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
+
 public class ViewProfile extends BaseFragment {
 
     Unbinder unbinder;
@@ -98,14 +99,10 @@ public class ViewProfile extends BaseFragment {
         View view = inflater.inflate(R.layout.view_profile, container, false);
         unbinder = ButterKnife.bind(this, view);
 
-        // Register the back pressed callback
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), onBackPressedCallback);
-
-
         if (NetworkUtils.getConnectivityStatus(context) != 0) {
             getData();
         } else showMessage(R.string.alert_internet);
-
 
         return view;
 
@@ -123,7 +120,6 @@ public class ViewProfile extends BaseFragment {
         JsonObject object = new JsonObject();
         object.addProperty("UserID", PreferencesManager.getInstance(context).getUserId());
         LoggerUtil.logItem(object);
-
         Call<ResponseViewProfile> call = apiServices.getViewProfile(object);
         call.enqueue(new Callback<ResponseViewProfile>() {
             @Override
@@ -131,7 +127,7 @@ public class ViewProfile extends BaseFragment {
                 hideLoading();
                     LoggerUtil.logItem(response.body());
                       tvBranch.setText(response.body().getBranchName());
-                      tvSponsorId.setText(response.body().getSponsorID());
+                      //tvSponsorId.setText(response.body().getSponsorID());
                       tvDesignation.setText(response.body().getDesignationName());
                       tvFirestName.setText(response.body().getFirstName());
                       tvContact.setText(response.body().getContact());
@@ -147,24 +143,28 @@ public class ViewProfile extends BaseFragment {
                       tvAddress.setText(response.body().getAddress());
                       tvAdharno.setText(response.body().getAdharNumber());
 
+                      String sponsorId = response.body().getSponsorID();
+                      if (sponsorId != null && !sponsorId.isEmpty()) {
+                      String maskedSponsorId = new String(new char[sponsorId.length()]).replace("\0", "*");
+                      tvSponsorId.setText(maskedSponsorId);
+                } else {
+                    tvSponsorId.setText("No Sponsor ID available");
                 }
+
+            }
 
             @Override
             public void onFailure(Call<ResponseViewProfile> call, Throwable t) {
                 hideLoading();
             }
         });
+
     }
 
     @OnClick(R.id.btn_update)
     public void onClick() {
         goToActivity(EditProfile.class,null);
     }
-
-
-
-
-
 
     private void replaceFragment(Fragment setFragment) {
         new Handler().postDelayed(() -> {

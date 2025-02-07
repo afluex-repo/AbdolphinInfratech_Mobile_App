@@ -1,12 +1,8 @@
 package com.abdolphininfratech.app;
-
 import android.app.Application;
-
-
-import com.abdolphininfratech.R;
 import com.abdolphininfratech.common.ConnectivityReceiver;
-
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+
 
 
 public class AppController extends Application {
@@ -18,7 +14,7 @@ public class AppController extends Application {
         mInstance = this;
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/montserrat_medium.ttf")
-                .setFontAttrId(R.attr.fontPath)
+                .setFontAttrId(uk.co.chrisjenx.calligraphy.R.attr.fontPath)
                 .disableCustomViewInflation()
                 .build());
     }
@@ -30,4 +26,6 @@ public class AppController extends Application {
     public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {
         ConnectivityReceiver.connectivityReceiverListener = listener;
     }
+
+
 }

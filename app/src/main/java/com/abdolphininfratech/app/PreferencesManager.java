@@ -3,7 +3,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 
-public class PreferencesManager {  ///PK_VisitorId
+public class PreferencesManager {
     //app login variables
     private static final String PREF_NAME = "com.hmgreencity.PREF";
     private static final String Full_Name = "Full_Name";
@@ -22,7 +22,6 @@ public class PreferencesManager {  ///PK_VisitorId
     private static final String SectorID = "SectorID";
     private static final String BlockID = "BlockID";
     private static final String CustomerID = "CustomerID";
-
 
     public static PreferencesManager sInstance;
     private final SharedPreferences mPref;

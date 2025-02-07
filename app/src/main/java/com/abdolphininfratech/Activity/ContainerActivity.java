@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.abdolphininfratech.Fragment.AdvancePaymentListFragment;
 import com.abdolphininfratech.Fragment.AssociateBusinessFragment;
+import com.abdolphininfratech.Fragment.AssociateSelfDownlineReportFragment;
 import com.abdolphininfratech.Fragment.AssociateTree;
 import com.abdolphininfratech.Fragment.BookingDetails;
 import com.abdolphininfratech.Fragment.BusinessDevelopmentFragment;
@@ -116,7 +117,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         }
 
         @OnClick({R.id.img_profile, R.id.tv_dashboard,R.id.submenu_item_1,R.id.subassociate_tree,R.id.subpayout_request,R.id.subuser_reword,R.id.subplot_availability,
-                R.id.tv_profile,   R.id.tv_payout_ledger,R.id.maindashboard,R.id.tv_visitor_report,R.id.tv_payment_report,R.id.tv_associatebusiness_report,
+                R.id.tv_profile, R.id.associatedownline , R.id.tv_payout_ledger,R.id.maindashboard,R.id.tv_visitor_report,R.id.tv_payment_report,R.id.tv_associatebusiness_report,
                 R.id.tv_payout_details,R.id.tv_plot_booking,R.id.tv_plot_availability,R.id.tv_payout_request,R.id.tv_downbusiness_report,R.id.tv_businessdevelopment_report,
                 R.id.tv_associate_downline,R.id.tv_unpaid_income,R.id.tv_payout_requestList,R.id.tv_ledger,R.id.tv_summary_report,R.id.tv_selfdownline_report,
                 R.id.tv_user_reword,R.id.tv_change_password, R.id.tv_associate_tree,R.id.tv_enquiry, R.id.tv_logout,R.id.kycUpload})
@@ -258,6 +259,11 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
                         ReplaceFragment(new SelfDownLineBusinessReportFragment(), "Self DownLine Business Report");
                     drawerLayout.closeDrawers();
                     break;
+                case R.id.associatedownline:
+                    if (!(currentFragment instanceof AssociateSelfDownlineReportFragment))
+                        ReplaceFragment(new AssociateSelfDownlineReportFragment(), " Associate Self DownLine");
+                    drawerLayout.closeDrawers();
+                    break;
 
                 //associate tree
                 case R.id.tv_associate_tree:
@@ -376,7 +382,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         View subItem4 = findViewById(R.id.payoutdetailsLayout);
         View subItem5 = findViewById(R.id.payoutrequestLayout);
         if (subItem2 != null) subItem2.setVisibility(View.VISIBLE);
-          if (subItem3 != null) subItem3.setVisibility(View.VISIBLE);
+        if (subItem3 != null) subItem3.setVisibility(View.VISIBLE);
         if (subItem4 != null) subItem4.setVisibility(View.VISIBLE);
         if (subItem5 != null) subItem5.setVisibility(View.VISIBLE);
     }
@@ -393,7 +399,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         View subItem8 = findViewById(R.id.downbusinessLayout);//done
         View subItem9 = findViewById(R.id.associatebusinessLayout);//done
         View subItem10 = findViewById(R.id.VISITORLayout);//done
-
+        View subItem11 = findViewById(R.id.associatedownlinelineLayout);
 
         if (subItem1 != null) subItem1.setVisibility(View.VISIBLE);
         if (subItem2 != null) subItem2.setVisibility(View.VISIBLE);
@@ -405,6 +411,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         if (subItem8 != null) subItem8.setVisibility(View.VISIBLE);
         if (subItem9 != null) subItem9.setVisibility(View.VISIBLE);
         if (subItem10 != null) subItem10.setVisibility(View.VISIBLE);
+        if (subItem11 != null) subItem11.setVisibility(View.VISIBLE);
 
     }
 
@@ -456,6 +463,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         View subItem8 = findViewById(R.id.downbusinessLayout);
         View subItem9 = findViewById(R.id.associatebusinessLayout);
         View subItem10 = findViewById(R.id.VISITORLayout);
+        View subItem11 = findViewById(R.id.associatedownlinelineLayout);
 
         if (subItem1 != null) subItem1.setVisibility(View.GONE);
         if (subItem2 != null) subItem2.setVisibility(View.GONE);
@@ -467,6 +475,7 @@ public class ContainerActivity extends BaseActivity implements NavigationView.On
         if (subItem8 != null) subItem8.setVisibility(View.GONE);
         if (subItem9 != null) subItem9.setVisibility(View.GONE);
         if (subItem10 != null) subItem10.setVisibility(View.GONE);
+        if (subItem11 != null) subItem11.setVisibility(View.GONE);
     }
 
 }

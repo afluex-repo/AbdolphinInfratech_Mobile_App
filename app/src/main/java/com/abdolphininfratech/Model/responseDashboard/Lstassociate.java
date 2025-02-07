@@ -39,6 +39,32 @@ public class Lstassociate {
     @Expose
     private String teamRegistry;
 
+    @SerializedName("TotalTDS")
+    public String totalTDS;
+    @SerializedName("UserRewards")
+    public String userRewards;
+
+    public Lstassociate(String totalTDS, String userRewards) {
+        this.totalTDS = totalTDS;
+        this.userRewards = userRewards;
+    }
+
+    public String getTotalTDS() {
+        return totalTDS;
+    }
+
+    public void setTotalTDS(String totalTDS) {
+        this.totalTDS = totalTDS;
+    }
+
+    public String getUserRewards() {
+        return userRewards;
+    }
+
+    public void setUserRewards(String userRewards) {
+        this.userRewards = userRewards;
+    }
+
     public String getTotalAssociate() {
         return totalAssociate;
     }

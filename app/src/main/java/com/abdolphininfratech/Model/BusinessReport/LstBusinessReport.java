@@ -1,6 +1,6 @@
 package com.abdolphininfratech.Model.BusinessReport;
-
 import com.google.gson.annotations.SerializedName;
+
 
 public class LstBusinessReport {
     @SerializedName("UserLoginId")
